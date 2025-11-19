@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tamer Çevik">
+    <title>Merchandise - Green Quest Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font 'Lexend' -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+                        <article style="display: flex;">
+                <img src="logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
+                <a href="index.html" class="logo">Green Quest Reviews</a>
+            </article>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="merchandise.html" class="active">Merchandise</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <h1 class="page-title">Onze Merchandise</h1>
+
+        <!-- Filterbalk (gebaseerd op wireframe) -->
+        <section class="filter-bar">
+            <label for="search-merch">Zoekbalk:</label>
+            <input type="text" id="search-merch" name="search-merch" placeholder="Zoek product...">
+            
+            <label for="category">Categorie:</label>
+            <select id="category" name="category">
+                <option value="alle">Alle Categorieën</option>
+                <option value="kleding">Kleding</option>
+                <option value="accessoires">Accessoires</option>
+                <option value="collectibles">Collectibles</option>
+            </select>
+            
+            <label for="price">Prijs:</label>
+            <select id="price" name="price">
+                <option value="alle">Alle Prijzen</option>
+                <option value="low-high">Laag naar Hoog</option>
+                <option value="high-low">Hoog naar Laag</option>
+            </select>
+
+            <button class="btn">Filter Producten</button>
+        </section>
+
+        <!-- Merchandise Grid -->
+        <section class="grid-3">
+            <!-- Product 1 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Product Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Exclusief T-Shirt</h3>
+                    <p>Kleding | €24,99</p>
+                    <a href="#" class="btn">Bekijk Product</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Product Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Gamer Muts</h3>
+                    <p>Accessoires | €19,99</p>
+                    <a href="#" class="btn">Bekijk Product</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Product Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>'Epische Reis' Figurine</h3>
+                    <p>Collectibles | €79,99</p>
+                    <a href="#" class="btn">Bekijk Product</a>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Product Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Logo Hoodie</h3>
+                    <p>Kleding | €49,99</p>
+                    <a href="#" class="btn">Bekijk Product</a>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Product Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Art Print</h3>
+                    <p>Collectibles | €34,99</p>
+                    <a href="#" class="btn">Bekijk Product</a>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Product Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Mok 'Stadsbouw'</h3>
+                    <p>Accessoires | €14,99</p>
+                    <a href="#" class="btn">Bekijk Product</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paginering -->
+        <nav class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+        </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Green Quest Reviews. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

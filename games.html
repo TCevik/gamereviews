@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tamer Çevik">
+    <title>Games - Green Quest Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font 'Lexend' -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+                        <article style="display: flex;">
+                <img src="logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
+                <a href="index.html" class="logo">Green Quest Reviews</a>
+            </article>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html" class="active">Games</a></li>
+                    <li><a href="merchandise.html">Merchandise</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <h1 class="page-title">Onze Games Catalogus</h1>
+
+        <!-- Filterbalk (gebaseerd op visual design) -->
+        <section class="filter-bar">
+            <label for="search">Zoeken:</label>
+            <input type="text" id="search" name="search" placeholder="Zoek op titel...">
+            
+            <label for="genre">Genre:</label>
+            <select id="genre" name="genre">
+                <option value="alle">Alle Genres</option>
+                <option value="rpg">RPG</option>
+                <option value="strategie">Strategie</option>
+                <option value="actie">Actie</option>
+                <option value="avontuur">Avontuur</option>
+            </select>
+            
+            <label for="platform">Platform:</label>
+            <select id="platform" name="platform">
+                <option value="alle">Alle Platforms</option>
+                <option value="pc">PC</option>
+                <option value="ps5">PS5</option>
+                <option value="xbox">Xbox</option>
+            </select>
+
+            <button class="btn">Filter Games</button>
+        </section>
+
+        <!-- Games Grid -->
+        <section class="grid-3">
+            <!-- Kaart 1 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Game Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Epische Reis I</h3>
+                    <p>RPG | PC, PS5</p>
+                    <a href="#" class="btn">Bekijk details</a>
+                </div>
+            </div>
+            <!-- Kaart 2 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Game Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Stadsbouw Simulatie</h3>
+                    <p>Strategie | PC</p>
+                    <a href="#" class="btn">Bekijk details</a>
+                </div>
+            </div>
+            <!-- Kaart 3 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Game Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Futuristische Racer</h3>
+                    <p>Race | Xbox</p>
+                    <a href="#" class="btn">Bekijk details</a>
+                </div>
+            </div>
+            <!-- Kaart 4 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Game Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Oude Mysteriën</h3>
+                    <p>Avontuur | Alle</p>
+                    <a href="#" class="btn">Bekijk details</a>
+                </div>
+            </div>
+            <!-- Kaart 5 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Game Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Ruimte Gevechten</h3>
+                    <p>Actie | PC</p>
+                    <a href="#" class="btn">Bekijk details</a>
+                </div>
+            </div>
+            <!-- Kaart 6 -->
+            <div class="card">
+                <div class="card-image-placeholder">
+                    <span>[Game Afbeelding]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Middeleeuws Beleg</h3>
+                    <p>Strategie | PC</p>
+                    <a href="#" class="btn">Bekijk details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paginering -->
+        <nav class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Green Quest Reviews. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

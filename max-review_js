@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Review JS - Game Stars</title>
+    <meta name="author" content="Tamer Çevik">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <article style="display: flex; align-items: center;">
+                <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
+                <a href="index.html" class="logo">Game Stars</a>
+            </article>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="merchandise.html">Merchandise</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="control-panel">
+            <button id="wisselKnop" class="btn btn-wissel">
+                🔄 Wissel van Game
+            </button>
+        </div>
+
+        <div id="game-output"></div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script>
+        const gameCatalogus = {
+            1: {
+                titel: "Stadsbouw Simulatie",
+                genre: "Strategie",
+                prijs: 49.99,
+                pegi: 7,
+                platform: "PC",
+                afbeelding: "images/2.png",
+                beschrijving: "Stadsbouw Simulatie is een uitgebreide en diepgaande simulatiegame voor PC en consoles, waarin je de ultieme controle krijgt over het creëren en beheren van je eigen bruisende metropool. Van de eerste steenlegging tot de skyline van wolkenkrabbers, elke beslissing die je neemt, vormt de toekomst van je stad.",
+                score: 8.5
+            },
+            2: {
+                titel: "Oude Mysteriën",
+                genre: "Avontuur",
+                prijs: 14.99,
+                pegi: 7,
+                platform: "Alle",
+                afbeelding: "images/4.png",
+                beschrijving: "Oude Mysteriën is een meeslepende avonturengame voor PC en consoles, die spelers meeneemt op een epische reis vol ontdekkingen, intriges en verborgen geheimen. Duik in vergeten beschavingen, verken adembenemende landschappen en ontrafel puzzels die eeuwenlang verborgen zijn gebleven.",
+                score: 9.0
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        let huidigId = parseInt(params.get('game')) || 1;
+
+        if (!gameCatalogus[huidigId]) {
+            huidigId = 1;
+        }
+
+        function renderGame(id) {
+            const data = gameCatalogus[id];
+            const container = document.getElementById('game-output');
+
+            const html = `
+                <h1 class="page-title">Review: ${data.titel}</h1>
+                
+                <div class="card game-card">
+                    <img src="${data.afbeelding}" alt="${data.titel}" class="game-img">
+                    
+                    <div class="card-content">
+                        <div class="meta-header">
+                            <span class="genre-badge">${data.genre}</span>
+                            <span class="price-label">€${data.prijs}</span>
+                        </div>
+
+                        <h3>Review Score: ${data.score}/10</h3>
+                        <p>${data.beschrijving}</p>
+
+                        <div class="specs-box">
+                            <h4>Specificaties</h4>
+                            <ul>
+                                <li><strong>Platform:</strong> ${data.platform}</li>
+                                <li><strong>PEGI Rating:</strong> ${data.pegi}+</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="nav-actions">
+                            <a href="games.html" class="btn">Terug naar overzicht</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = html;
+            console.log(`Geladen game: ${data.titel} (ID: ${id})`);
+        }
+
+        document.getElementById('wisselKnop').addEventListener('click', function () {
+            const nieuwId = (huidigId === 1) ? 2 : 1;
+
+            window.location.search = `?game=${nieuwId}`;
+        });
+
+        renderGame(huidigId);
+
+    </script>
+</body>
+
+</html>

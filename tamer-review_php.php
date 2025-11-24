@@ -17,7 +17,7 @@
         "prijs" => 59.99,
         "pegi" => 12,
         "platform" => "PC, PS5",
-        "afbeelding" => "images/epische reis.png",
+        "afbeelding" => "images/1.png",
         "beschrijving" => "Een meeslepend avontuur door magische landschappen. Ontdek verborgen schatten en vecht tegen mythische wezens in deze open-world RPG.",
         "pluspunten" => "Geweldig verhaal, Prachtige graphics",
         "minpunten" => "Lange laadtijden"

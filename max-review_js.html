@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Review JS - Game Stars</title>
-        <meta name="author" content="Tamer Çevik">
-    <link rel="stylesheet" href="style/style.css"> <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="author" content="Tamer Çevik">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header>
@@ -27,7 +30,7 @@
     </header>
 
     <main class="container">
-        
+
         <div style="text-align: center; margin-bottom: 20px;">
             <button onclick="wisselGame()" class="btn" style="background-color: #004D00; font-size: 1.2rem;">
                 🔄 Wissel van Game
@@ -53,19 +56,19 @@
             pegi: 7,
             platform: "PC",
             afbeelding: "images/3.png",
-            beschrijving: "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            beschrijving: "Stadsbouw Simulatie is een uitgebreide en diepgaande simulatiegame voor PC en consoles, waarin je de ultieme controle krijgt over het creëren en beheren van je eigen bruisende metropool. Van de eerste steenlegging tot de skyline van wolkenkrabbers, elke beslissing die je neemt, vormt de toekomst van je stad.",
             score: 8.5
         };
 
         const game2 = {
             id: 2,
-            titel: "Ruimte Gevechten",
+            titel: "Oude Mysteriën",
             genre: "Actie",
             prijs: 14.99,
             pegi: 7,
             platform: "PC",
             afbeelding: "images/5.png",
-            beschrijving: "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            beschrijving: "Oude Mysteriën is een meeslepende avonturengame voor PC en consoles, die spelers meeneemt op een epische reis vol ontdekkingen, intriges en verborgen geheimen. Duik in vergeten beschavingen, verken adembenemende landschappen en ontrafel puzzels die eeuwenlang verborgen zijn gebleven.",
             score: 9.0
         };
 
@@ -88,7 +91,7 @@
         function toonGame(kiesId) {
             let gekozenGame;
 
-            switch(kiesId) {
+            switch (kiesId) {
                 case 1:
                     gekozenGame = game1;
                     break;
@@ -139,4 +142,5 @@
         }
     </script>
 </body>
+
 </html>

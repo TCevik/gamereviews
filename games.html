@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,13 @@
     <!-- Google Font 'Lexend' -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Header --> 
+    <!-- Header -->
     <header>
         <div class="nav-container">
-                        <article style="display: flex;">
+            <article style="display: flex;">
                 <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
                 <a href="index.html" class="logo">Game Stars</a>
             </article>
@@ -38,7 +40,7 @@
         <section class="filter-bar">
             <label for="search">Zoeken:</label>
             <input type="text" id="search" name="search" placeholder="Zoek op titel...">
-            
+
             <label for="genre">Genre:</label>
             <select id="genre" name="genre">
                 <option value="alle">Alle Genres</option>
@@ -47,7 +49,7 @@
                 <option value="actie">Actie</option>
                 <option value="avontuur">Avontuur</option>
             </select>
-            
+
             <label for="platform">Platform:</label>
             <select id="platform" name="platform">
                 <option value="alle">Alle Platforms</option>
@@ -63,7 +65,7 @@
         <section class="grid-3">
             <!-- Kaart 1 -->
             <div class="card">
-                    <img src="images/epische reis.png" alt="">
+                <img src="images/epische reis.png" alt="">
                 <div class="card-content">
                     <h3>Epische Reis I</h3>
                     <p>RPG | PC, PS5</p>
@@ -72,7 +74,7 @@
             </div>
             <!-- Kaart 2 -->
             <div class="card">
-                    <img src="images/2.png" alt="">
+                <img src="images/2.png" alt="">
                 <div class="card-content">
                     <h3>Stadsbouw Simulatie</h3>
                     <p>Strategie | PC</p>
@@ -81,7 +83,7 @@
             </div>
             <!-- Kaart 3 -->
             <div class="card">
-                    <img src="images/3.png" alt="">
+                <img src="images/3.png" alt="">
                 <div class="card-content">
                     <h3>Futuristische Racer</h3>
                     <p>Race | Xbox</p>
@@ -90,7 +92,7 @@
             </div>
             <!-- Kaart 4 -->
             <div class="card">
-                    <img src="images/4.png" alt="">
+                <img src="images/4.png" alt="">
                 <div class="card-content">
                     <h3>Oude Mysteriën</h3>
                     <p>Avontuur | Alle</p>
@@ -99,7 +101,7 @@
             </div>
             <!-- Kaart 5 -->
             <div class="card">
-                    <img src="images/5.png" alt="">
+                <img src="images/5.png" alt="">
                 <div class="card-content">
                     <h3>Ruimte Gevechten</h3>
                     <p>Actie | PC</p>
@@ -108,7 +110,7 @@
             </div>
             <!-- Kaart 6 -->
             <div class="card">
-                    <img src="images/6.png" alt="">
+                <img src="images/6.png" alt="">
                 <div class="card-content">
                     <h3>Middeleeuws Beleg</h3>
                     <p>Strategie | PC</p>
@@ -133,5 +135,24 @@
         </div>
     </footer>
 
+    <script>
+        function pasFooterAan() {
+            const footer = document.querySelector('footer');
+            const windowHoogte = window.innerHeight;
+            const bodyHoogte = document.body.offsetHeight;
+
+            if (bodyHoogte < windowHoogte) {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+                footer.style.width = '100%';
+            } else {
+                footer.style.position = 'static';
+            }
+        }
+
+        window.addEventListener('load', pasFooterAan);
+        window.addEventListener('resize', pasFooterAan);
+    </script>
 </body>
+
 </html>

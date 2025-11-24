@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,13 @@
     <!-- Google Font 'Lexend' -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Header -->
     <header>
         <div class="nav-container">
-                        <article style="display: flex;">
+            <article style="display: flex;">
                 <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
                 <a href="index.html" class="logo">Game Stars</a>
             </article>
@@ -38,7 +40,7 @@
         <section class="filter-bar">
             <label for="search-merch">Zoekbalk:</label>
             <input type="text" id="search-merch" name="search-merch" placeholder="Zoek product...">
-            
+
             <label for="category">Categorie:</label>
             <select id="category" name="category">
                 <option value="alle">Alle Categorieën</option>
@@ -46,7 +48,7 @@
                 <option value="accessoires">Accessoires</option>
                 <option value="collectibles">Collectibles</option>
             </select>
-            
+
             <label for="price">Prijs:</label>
             <select id="price" name="price">
                 <option value="alle">Alle Prijzen</option>
@@ -142,5 +144,24 @@
         </div>
     </footer>
 
+    <script>
+        function pasFooterAan() {
+            const footer = document.querySelector('footer');
+            const windowHoogte = window.innerHeight;
+            const bodyHoogte = document.body.offsetHeight;
+
+            if (bodyHoogte < windowHoogte) {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+                footer.style.width = '100%';
+            } else {
+                footer.style.position = 'static';
+            }
+        }
+
+        window.addEventListener('load', pasFooterAan);
+        window.addEventListener('resize', pasFooterAan);
+    </script>
 </body>
+
 </html>

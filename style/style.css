@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap');
+
 :root {
     --white: #FFFFFF;
     --light-green-bg: #E0F5E0;
@@ -26,7 +27,12 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-family);
     color: var(--dark-green-text);
     margin-bottom: 1rem;
@@ -83,7 +89,7 @@ header {
     background-color: var(--dark-green-nav);
     color: var(--white);
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -174,7 +180,11 @@ footer {
 }
 
 .hero {
-    background-color: #6B6B6B;
+    background-image: url(../images/achtergrond.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -190,6 +200,21 @@ footer {
     color: var(--white);
     margin-bottom: 1rem;
     font-weight: 700;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+
+        2px 0px 0 #000,
+        -2px 0px 0 #000,
+        0px 2px 0 #000,
+        0px -2px 0 #000;
 }
 
 .hero p {
@@ -197,6 +222,21 @@ footer {
     max-width: 600px;
     margin-bottom: 2rem;
     font-weight: 300;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+
+        2px 0px 0 #000,
+        -2px 0px 0 #000,
+        0px 2px 0 #000,
+        0px -2px 0 #000;
 }
 
 .page-title {
@@ -344,7 +384,7 @@ footer {
         text-align: center;
         gap: 0.5rem;
     }
-    
+
     .hero {
         height: 60vh;
     }

@@ -9,60 +9,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Interne styling om de HTML schoon te houden */
-        .logo-wrapper { display: flex; align-items: center; }
-        .logo-img { max-width: 50px; margin-right: 20px; }
-        .review-card { display: flex; flex-direction: column; max-width: 800px; margin: 0 auto; }
-        .review-img { width: 100%; height: 400px; object-fit: cover; }
-        .meta-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .genre-tag { background: var(--brand-green); color: white; padding: 5px 15px; border-radius: 20px; }
-        .price-tag { font-weight: bold; font-size: 1.2rem; }
-        .details-box { background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px; }
-        .action-buttons { margin-top: 20px; display: flex; gap: 10px; }
-        .btn-alt { background-color: #333; }
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-width: 50px;
+            margin-right: 20px;
+        }
+
+        .review-card {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .review-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .genre-tag {
+            background: var(--brand-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .price-tag {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .details-box {
+            background: var(--light-green-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-alt {
+            background-color: #333;
+        }
     </style>
 </head>
 <body>
 
     <?php
-    // Data opgeslagen in één array met ID als index
     $games = [
         1 => [
-            "titel" => "Epische Reis I",
-            "genre" => "RPG",
-            "prijs" => 59.99,
-            "pegi" => 12,
-            "platform" => "PC, PS5",
-            "afbeelding" => "images/1.png",
-            "beschrijving" => "Een meeslepend avontuur door magische landschappen. Ontdek verborgen schatten en vecht tegen mythische wezens in deze open-world RPG.",
-            "pluspunten" => "Geweldig verhaal, Prachtige graphics",
-            "minpunten" => "Lange laadtijden"
+            "titel" => "Farm week",
+            "genre" => "Simulatie ",
+            "prijs" => 44,99,
+            "pegi" => 7,
+            "platform" => "PC, Mobile",
+            "afbeelding" => "images/7.png",
+            "beschrijving" => "000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "pluspunten" => "Goede customization, Makkelijk te begrijpen",
+            "minpunten" => "Zware game"
         ],
         2 => [
-            "titel" => "Middeleeuws Beleg",
-            "genre" => "Strategie",
-            "prijs" => 44.50,
-            "pegi" => 12,
-            "platform" => "PC",
-            "afbeelding" => "images/6.png",
-            "beschrijving" => "Bouw je kasteel en verdedig het tegen indringers. Beheer grondstoffen en train je legers in deze tactische simulatie waarbij elke beslissing telt.",
-            "pluspunten" => "Diepe strategie, Realistische physics",
-            "minpunten" => "Steile leercurve"
+            "titel" => "Military warfare",
+            "genre" => "Strategie, Actie",
+            "prijs" => 79,99,
+            "pegi" => 7,
+            "platform" => "PC, Console",
+            "afbeelding" => "images/8.png",
+            "beschrijving" => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "pluspunten" => "Online multiplayer, Fast pased",
+            "minpunten" => "Veel sweats"
         ]
     ];
 
-    // Bepaal welk ID is gevraagd (standaard is 1)
     $huidigId = isset($_GET['game']) ? (int)$_GET['game'] : 1;
 
-    // Controleer of het ID bestaat. Zo niet. val terug op 1
     if (!array_key_exists($huidigId, $games)) {
         $huidigId = 1;
     }
 
-    // Haal de data op
     $data = $games[$huidigId];
 
-    // Bereken de link naar de 'andere' pagina
     $anderId = ($huidigId === 1) ? 2 : 1;
     $wisselLink = "?game=" . $anderId;
     ?>

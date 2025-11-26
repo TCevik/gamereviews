@@ -169,7 +169,6 @@
         const zoekVeld = document.getElementById('search');
         const genreSelect = document.getElementById('genre');
         const platformSelect = document.getElementById('platform');
-        const filterKnop = document.querySelector('.filter-bar .btn');
         const alleKaarten = document.querySelectorAll('.card');
 
         function filterGames() {
@@ -197,7 +196,6 @@
             pasFooterAan();
         }
 
-        filterKnop.addEventListener('click', filterGames);
         zoekVeld.addEventListener('keyup', filterGames);
         genreSelect.addEventListener('change', filterGames);
         platformSelect.addEventListener('change', filterGames);

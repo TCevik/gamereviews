@@ -7,7 +7,7 @@
     <meta name="author" content="Tamer Çevik">
     <link rel="stylesheet" href="style/style.css"> <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="reviewb">
 
     <?php
     $game1 = [
@@ -66,10 +66,10 @@
         </article>
     </header>
 
-    <main class="container">
+    <main class="container" id="reviewt">
         <h1 class="page-title">Review: <?= $geselecteerdeGame['titel'] ?></h1>
 
-        <article class="card" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto;">
+        <article class="card" id="review" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto;">
             <img src="<?= $geselecteerdeGame['afbeelding'] ?>" alt="<?= $geselecteerdeGame['titel'] ?>" style="width: 100%; height: 400px; object-fit: cover;">
             
             <article class="card-content">

@@ -84,10 +84,10 @@
                 <article style="background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px;">
                     <h4>Details</h4>
                     <ul>
-                        <li><strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?></li>
-                        <li><strong>PEGI Rating:</strong> <?= $geselecteerdeGame['pegi'] ?>+</li>
-                        <li><strong>Pluspunten:</strong> <?= $geselecteerdeGame['pluspunten'] ?></li>
-                        <li><strong>Minpunten:</strong> <?= $geselecteerdeGame['minpunten'] ?></li>
+                        <strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?>
+                        <br><strong>PEGI Rating:</strong> <?= $geselecteerdeGame['pegi'] ?>+
+                        <br><strong>Pluspunten:</strong> <?= $geselecteerdeGame['pluspunten'] ?>
+                        <br><strong>Minpunten:</strong> <?= $geselecteerdeGame['minpunten'] ?>
                     </ul>
                 </article>
                 

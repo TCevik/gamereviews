@@ -46,7 +46,7 @@
     ?>
 
     <header>
-        <div class="nav-container">
+        <article class="nav-container">
             <article style="display: flex;">
                 <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
                 <a href="index.html" class="logo">Game Stars</a>
@@ -59,29 +59,29 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-        </div>
+        </article>
     </header>
 
     <main class="container">
         <h1 class="page-title">Review: <?= $geselecteerdeGame['titel'] ?></h1>
 
-        <div class="card" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto;">
+        <article class="card" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto;">
             <img src="<?= $geselecteerdeGame['afbeelding'] ?>" alt="<?= $geselecteerdeGame['titel'] ?>" style="width: 100%; height: 400px; object-fit: cover;">
             
-            <div class="card-content">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <article class="card-content">
+                <article style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <span style="background: var(--brand-green); color: white; padding: 5px 15px; border-radius: 20px;">
                         <?= $geselecteerdeGame['genre'] ?>
                     </span>
                     <span style="font-weight: bold; font-size: 1.2rem;">
                         €<?= number_format($geselecteerdeGame['prijs'], 2, ',', '.') ?>
                     </span>
-                </div>
+                </article>
 
                 <h3>Het Oordeel</h3>
                 <p><?= $geselecteerdeGame['beschrijving'] ?></p>
 
-                <div style="background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px;">
+                <article style="background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px;">
                     <h4>Details</h4>
                     <ul>
                         <li><strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?></li>
@@ -89,20 +89,20 @@
                         <li><strong>Pluspunten:</strong> <?= $geselecteerdeGame['pluspunten'] ?></li>
                         <li><strong>Minpunten:</strong> <?= $geselecteerdeGame['minpunten'] ?></li>
                     </ul>
-                </div>
+                </article>
                 
-                <div style="margin-top: 20px; display: flex; gap: 10px;">
+                <article style="margin-top: 20px; display: flex; gap: 10px;">
                     <a href="games.html" class="btn">Terug naar overzicht</a>
                     <a href="<?= $andereGameLink ?>" class="btn" style="background-color: #333;">Bekijk andere review</a>
-                </div>
-            </div>
-        </div>
+                </article>
+            </article>
+        </article>
     </main>
 
     <footer>
-        <div class="container">
+        <article class="container">
             <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
-        </div>
+        </article>
     </footer>
 
 </body>

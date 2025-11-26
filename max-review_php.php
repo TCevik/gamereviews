@@ -66,8 +66,8 @@
         </article>
     </header>
 
-    <main class="container" id="reviewt">
-        <h1 class="page-title">Review: <?= $geselecteerdeGame['titel'] ?></h1>
+    <main class="container">
+        <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: white;" class="page-title">Review: <?= $geselecteerdeGame['titel'] ?></h1>
 
         <article class="card" id="review" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto;">
             <img src="<?= $geselecteerdeGame['afbeelding'] ?>" alt="<?= $geselecteerdeGame['titel'] ?>" style="width: 100%; height: 400px; object-fit: cover;">

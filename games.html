@@ -166,7 +166,6 @@
         window.addEventListener('load', pasFooterAan);
         window.addEventListener('resize', pasFooterAan);
 
-        // Selecteer de elementen
         const zoekVeld = document.getElementById('search');
         const genreSelect = document.getElementById('genre');
         const platformSelect = document.getElementById('platform');
@@ -174,7 +173,6 @@
         const alleKaarten = document.querySelectorAll('.card');
 
         function filterGames() {
-            // Haal de waarden op en maak ze kleine letters
             const zoekTekst = zoekVeld.value.toLowerCase();
             const gekozenGenre = genreSelect.value.toLowerCase();
             const gekozenPlatform = platformSelect.value.toLowerCase();
@@ -183,30 +181,24 @@
                 const titel = kaart.querySelector('h3').innerText.toLowerCase();
                 const infoTekst = kaart.querySelector('p').innerText.toLowerCase();
 
-                // Check 1: Komt de zoektekst voor in de titel?
                 const matchZoek = titel.includes(zoekTekst);
 
-                // Check 2: Matcht het genre? (of is 'alle' gekozen)
                 const matchGenre = gekozenGenre === 'alle' || infoTekst.includes(gekozenGenre);
 
-                // Check 3: Matcht het platform? (of is 'alle' gekozen)
                 const matchPlatform = gekozenPlatform === 'alle' || infoTekst.includes(gekozenPlatform);
 
-                // Als alles klopt, laat de kaart zien. Anders verberg hem.
                 if (matchZoek && matchGenre && matchPlatform) {
-                    kaart.style.display = ''; // Standaard weergave
+                    kaart.style.display = '';
                 } else {
-                    kaart.style.display = 'none'; // Verbergen
+                    kaart.style.display = 'none';
                 }
             });
 
-            // Roep de footer functie aan omdat de pagina lengte verandert
             pasFooterAan();
         }
 
-        // Luister naar events (klikken op knop, of typen/kiezen)
         filterKnop.addEventListener('click', filterGames);
-        zoekVeld.addEventListener('keyup', filterGames); // Direct zoeken tijdens typen
+        zoekVeld.addEventListener('keyup', filterGames);
         genreSelect.addEventListener('change', filterGames);
         platformSelect.addEventListener('change', filterGames);
     </script>

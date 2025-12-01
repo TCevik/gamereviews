@@ -7,11 +7,46 @@
     <meta name="author" content="Tamer Çevik en Max Drzewinski">
     <title>Contact - Game Stars</title>
     <link rel="stylesheet" href="style/style.css">
+    <!-- Google Font 'Lexend' -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Stijlen voor de container die het formulier en de info omvat */
+        .contact-wrapper {
+            display: flex;
+            /* Activeer Flexbox */
+            gap: 30px;
+            /* Creëer ruimte tussen de twee kolommen */
+            justify-content: space-between;
+            /* Verdeel de ruimte gelijkmatig (optioneel, maar aanbevolen) */
+            align-items: flex-start;
+            /* Lijn items bovenaan uit */
+        }
+
+        /* Zorg ervoor dat het formulier en de contactinfo evenveel ruimte innemen, of pas ze aan */
+        .contact-form,
+        .contact-info {
+            flex: 1;
+            /* Laat beide elementen evenredig groeien en krimpen */
+            min-width: 300px;
+            /* Voorkom dat ze te smal worden op grote schermen */
+        }
+
+        /* Responsive aanpassing: Plaats ze onder elkaar op kleinere schermen */
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                flex-direction: column;
+                /* Stapel de items op elkaar op kleine schermen */
+                gap: 40px;
+                /* Meer ruimte tussen de gestapelde secties */
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
         <article class="nav-container">
             <article style="display: flex;">
@@ -26,21 +61,40 @@
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
-        </article>
+            <article>
     </header>
 
+    <!-- Main Content -->
     <main class="container">
 
         <h1 class="page-title">Neem Contact Op</h1>
 
+        <!-- Contact Layout (gebaseerd op wireframe) -->
         <article class="contact-wrapper">
 
+            <!-- Contactformulier -->
             <form class="contact-form">
-                <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSdWgb54cCuzkS4GNNqaN4nnD6XVLepFirmdGR2PU6iTS-760g/viewform?embedded=true"
-                    width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <h2>Stuur ons een bericht</h2>
+                <article class="form-group">
+                    <label for="name">Naam</label>
+                    <input type="text" id="name" name="name" required>
+                    <article>
+                        <article class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                            <article>
+                                <article class="form-group">
+                                    <label for="subject">Onderwerp</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                    <article>
+                                        <article class="form-group">
+                                            <label for="message">Bericht</label>
+                                            <textarea id="message" name="message" required></textarea>
+                                            <article>
+                                                <button type="submit" class="btn">Verstuur Knop</button>
             </form>
 
+            <!-- Contactgegevens -->
             <article class="contact-info">
                 <h3>Contactgegevens</h3>
                 <p>
@@ -63,30 +117,13 @@
 
     </main>
 
+    <!-- Footer -->
     <footer>
         <article class="container">
             <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
             <article>
     </footer>
 
-    <script>
-        function pasFooterAan() {
-            const footer = document.querySelector('footer');
-            const windowHoogte = window.innerHeight;
-            const bodyHoogte = document.body.offsetHeight;
-
-            if (bodyHoogte < windowHoogte) {
-                footer.style.position = 'fixed';
-                footer.style.bottom = '0';
-                footer.style.width = '100%';
-            } else {
-                footer.style.position = 'static';
-            }
-        }
-
-        window.addEventListener('load', pasFooterAan);
-        window.addEventListener('resize', pasFooterAan);
-    </script>
 </body>
 
 </html>

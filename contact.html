@@ -7,7 +7,6 @@
     <meta name="author" content="Tamer Çevik en Max Drzewinski">
     <title>Contact - Game Stars</title>
     <link rel="stylesheet" href="style/style.css">
-    <!-- Google Font 'Lexend' -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -25,6 +24,41 @@
             margin-top: 10px;
         }
 
+        /* Voeg basisstijlen voor formulierelementen toe (zonder style.css) */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Zorgt ervoor dat padding binnen de breedte valt */
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
         @media (max-width: 768px) {
             .contact-wrapper {
                 flex-direction: column;
@@ -36,7 +70,6 @@
 
 <body>
 
-    <!-- Header -->
     <header>
         <article class="nav-container">
             <article style="display: flex;">
@@ -51,7 +84,7 @@
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
-            <article>
+        </article>
     </header>
 
     <main class="container">
@@ -65,20 +98,20 @@
                 <article class="form-group">
                     <label for="name">Naam</label>
                     <input type="text" id="name" name="name" required>
-                    <article>
-                        <article class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required>
-                            <article>
-                                <article class="form-group">
-                                    <label for="subject">Onderwerp</label>
-                                    <input type="text" id="subject" name="subject" required>
-                                    <article>
-                                        <article class="form-group">
-                                            <label for="message">Bericht</label>
-                                            <textarea id="message" name="message" required></textarea>
-                                            <article>
-                                                <button type="submit" class="btn">Verstuur Knop</button>
+                </article>
+                <article class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </article>
+                <article class="form-group">
+                    <label for="subject">Onderwerp</label>
+                    <input type="text" id="subject" name="subject" required>
+                </article>
+                <article class="form-group">
+                    <label for="message">Bericht</label>
+                    <textarea id="message" name="message" required></textarea>
+                </article>
+                <button type="submit" class="btn">Verstuur Knop</button>
             </form>
 
             <article class="contact-info">
@@ -97,18 +130,88 @@
                     <strong>E-mail:</strong><br>
                     info@greenquestreviews.nl
                 </p>
-                <article>
+            </article>
 
-                    <article>
+        </article>
 
     </main>
 
     <footer>
         <article class="container">
             <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
-            <article>
+        </article>
     </footer>
 
-</body>
+    <script>
+        // ** BELANGRIJK: Vervang dit door je Discord Webhook URL **
+        const WEBHOOK_URL = 'UW_DISCORD_WEBHOOK_URL'; 
+
+        const contactForm = document.querySelector('.contact-form');
+        
+        // Voeg een 'event listener' toe die reageert op het versturen van het formulier
+        contactForm.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Voorkom de standaard formulierinzending (pagina herladen)
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Maak de payload (JSON-object) die naar Discord wordt gestuurd
+            const discordPayload = {
+                content: "✨ **Nieuw Contactformulier Inzending** ✨",
+                embeds: [{
+                    title: subject,
+                    color: 5814783, // Een mooie blauw/groene Discord kleur
+                    fields: [
+                        {
+                            name: "👤 Naam",
+                            value: name,
+                            inline: true
+                        },
+                        {
+                            name: "📧 E-mail",
+                            value: email,
+                            inline: true
+                        },
+                        {
+                            name: "💬 Bericht",
+                            value: message.substring(0, 1024), // Limiteer tot 1024 karakters voor Discord
+                            inline: false
+                        }
+                    ],
+                    // Voeg een tijdstempel toe
+                    timestamp: new Date().toISOString(), 
+                    footer: {
+                        text: "Game Stars Contact"
+                    }
+                }]
+            };
+
+            try {
+                // Stuur het POST-verzoek naar de Discord Webhook met de fetch API
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(discordPayload),
+                });
+
+                if (response.ok) {
+                    alert('Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.');
+                    contactForm.reset(); // Maak het formulier leeg
+                } else {
+                    // Log de fout voor debuggen
+                    console.error('Fout bij versturen naar Discord:', response.status, response.statusText); 
+                    alert('Er is een fout opgetreden bij het verzenden van het bericht. Probeer het later opnieuw.');
+                }
+            } catch (error) {
+                console.error('Netwerkfout:', error);
+                alert('Er is een netwerkfout opgetreden. Controleer je verbinding.');
+            }
+        });
+    </script>
+    </body>
 
 </html>

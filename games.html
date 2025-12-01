@@ -1,268 +1,304 @@
-    <!DOCTYPE html>
-    <html lang="nl">
+<!DOCTYPE html>
+<html lang="nl">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Tamer Çevik">
-        <title>Games - Game Stars</title>
-        <link rel="stylesheet" href="style/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tamer Çevik">
+    <title>Games - Game Stars</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
-        <header>
-            <article class="nav-container">
-                <article style="display: flex;">
-                    <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
-                    <a href="index.html" class="logo">Game Stars</a>
-                </article>
-                <nav class="nav-links">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="games.html" class="active">Games</a></li>
-                        <li><a href="merchandise.html">Merchandise</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+    <header>
+        <article class="nav-container">
+            <article style="display: flex;">
+                <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
+                <a href="index.html" class="logo">Game Stars</a>
             </article>
-        </header>
-
-        <main class="container">
-
-            <h1 class="page-title">Onze Games Catalogus</h1>
-
-            <section class="filter-bar">
-                <label for="search">Zoeken:</label>
-                <input type="text" id="search" name="search" placeholder="Zoek op titel...">
-
-                <label for="genre">Genre:</label>
-                <select id="genre" name="genre">
-                    <option value="alle">Alle Genres</option>
-                    <option value="rpg">RPG</option>
-                    <option value="strategie">Strategie</option>
-                    <option value="actie">Actie</option>
-                    <option value="avontuur">Avontuur</option>
-                </select>
-
-                <label for="platform">Platform:</label>
-                <select id="platform" name="platform">
-                    <option value="alle">Alle Platforms</option>
-                    <option value="pc">PC</option>
-                    <option value="ps5">PS5</option>
-                    <option value="xbox">Xbox</option>
-                </select>
-            </section>
-
-            <section class="grid-3" id="game-container">
-                <article class="card" data-page="1" data-genre="rpg" data-platform="pc ps5">
-                    <img src="images/1.png" alt="">
-                    <article class="card-content">
-                        <h3>Epische Reis I</h3>
-                        <p>RPG | PC, PS5</p>
-                        <a href="tamer-review_php.php?game=1" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                <article class="card" data-page="1" data-genre="strategie" data-platform="pc">
-                    <img src="images/2.png" alt="">
-                    <article class="card-content">
-                        <h3>Stadsbouw Simulatie</h3>
-                        <p>Strategie | PC</p>
-                        <a href="max-review_js.html?game=1" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                <article class="card" data-page="1" data-genre="race" data-platform="xbox">
-                    <img src="images/3.png" alt="">
-                    <article class="card-content">
-                        <h3>Futuristische Racer</h3>
-                        <p>Race | Xbox</p>
-                        <a href="tamer-review_js.html?game=1" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                <article class="card" data-page="1" data-genre="avontuur" data-platform="pc ps5 xbox">
-                    <img src="images/4.png" alt="">
-                    <article class="card-content">
-                        <h3>Oude Mysteriën</h3>
-                        <p>Avontuur | Alle</p>
-                        <a href="max-review_js.html?game=2" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-
-                <article class="card" data-page="1" data-genre="actie" data-platform="pc">
-                    <img src="images/5.png" alt="">
-                    <article class="card-content">
-                        <h3>Ruimte Gevechten</h3>
-                        <p>Actie | PC</p>
-                        <a href="tamer-review_js.html?game=2" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                <article class="card" data-page="1" data-genre="strategie" data-platform="pc">
-                    <img src="images/6.png" alt="">
-                    <article class="card-content">
-                        <h3>Middeleeuws Beleg</h3>
-                        <p>Strategie | PC</p>
-                        <a href="tamer-review_php.php?game=2" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-
-                <article class="card" data-page="1" data-genre="simulatie" data-platform="pc mobile">
-                    <img src="images/7.png" alt="">
-                    <article class="card-content">
-                        <h3>Farm week</h3>
-                        <p>Simulatie | PC, MOBILE</p>
-                        <a href="max-review_php.php?game=1" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-
-                <article class="card" data-page="1" data-genre="strategie actie" data-platform="pc console">
-                    <img src="images/8.png" alt="">
-                    <article class="card-content">
-                        <h3>Military warfare</h3>
-                        <p>Strategie, Actie | PC, Console</p>
-                        <a href="max-review_php.php?game=2" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                
-                <article class="card" data-page="2" data-genre="rpg" data-platform="ps5 xbox">
-                    <img src="images/9.png" alt="">
-                    <article class="card-content">
-                        <h3>Draken Vlucht</h3>
-                        <p>RPG | PS5, Xbox</p>
-                        <a href="details.html?game=9" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                <article class="card" data-page="2" data-genre="actie" data-platform="pc ps5">
-                    <img src="images/10.png" alt="">
-                    <article class="card-content">
-                        <h3>Nachtelijke Schaduw</h3>
-                        <p>Actie | PC, PS5</p>
-                        <a href="details.html?game=10" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                <article class="card" data-page="2" data-genre="strategie" data-platform="pc">
-                    <img src="images/11.png" alt="">
-                    <article class="card-content">
-                        <h3>Industrie Magneet</h3>
-                        <p>Strategie | PC</p>
-                        <a href="details.html?game=11" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-                <article class="card" data-page="2" data-genre="avontuur" data-platform="xbox">
-                    <img src="images/12.png" alt="">
-                    <article class="card-content">
-                        <h3>Grot van Vergetelheid</h3>
-                        <p>Avontuur | Xbox</p>
-                        <a href="details.html?game=12" class="btn">Bekijk details</a>
-                    </article>
-                </article>
-
-            </section>
-
-            <nav class="pagination" id="pagination-nav">
-                <a href="#" class="page-link active" data-page="1">1</a>
-                <a href="#" class="page-link" data-page="2">2</a>
-                <a href="#" class="page-link" data-page="3">3</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html" class="active">Games</a></li>
+                    <li><a href="merchandise.html">Merchandise</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
+        </article>
+    </header>
 
-        </main>
+    <main class="container">
 
-        <footer>
-            <article class="container">
-                <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
+        <h1 class="page-title">Onze Games Catalogus</h1>
+
+        <section class="filter-bar">
+            <label for="search">Zoeken:</label>
+            <input type="text" id="search" name="search" placeholder="Zoek op titel...">
+
+            <label for="genre">Genre:</label>
+            <select id="genre" name="genre">
+                <option value="alle">Alle Genres</option>
+                <option value="rpg">RPG</option>
+                <option value="strategie">Strategie</option>
+                <option value="actie">Actie</option>
+                <option value="avontuur">Avontuur</option>
+            </select>
+
+            <label for="platform">Platform:</label>
+            <select id="platform" name="platform">
+                <option value="alle">Alle Platforms</option>
+                <option value="pc">PC</option>
+                <option value="ps5">PS5</option>
+                <option value="xbox">Xbox</option>
+            </select>
+        </section>
+
+        <section class="grid-3" id="game-container">
+            <article class="card" data-page="1" data-genre="rpg" data-platform="pc ps5">
+                <img src="images/1.png" alt="">
+                <article class="card-content">
+                    <h3>Epische Reis I</h3>
+                    <p>RPG | PC, PS5</p>
+                    <a href="tamer-review_php.php?game=1" class="btn">Bekijk details</a>
+                </article>
             </article>
-        </footer>
+            <article class="card" data-page="1" data-genre="strategie" data-platform="pc">
+                <img src="images/2.png" alt="">
+                <article class="card-content">
+                    <h3>Stadsbouw Simulatie</h3>
+                    <p>Strategie | PC</p>
+                    <a href="max-review_js.html?game=1" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="1" data-genre="race" data-platform="xbox">
+                <img src="images/3.png" alt="">
+                <article class="card-content">
+                    <h3>Futuristische Racer</h3>
+                    <p>Race | Xbox</p>
+                    <a href="tamer-review_js.html?game=1" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="1" data-genre="avontuur" data-platform="pc ps5 xbox">
+                <img src="images/4.png" alt="">
+                <article class="card-content">
+                    <h3>Oude Mysteriën</h3>
+                    <p>Avontuur | Alle</p>
+                    <a href="max-review_js.html?game=2" class="btn">Bekijk details</a>
+                </article>
+            </article>
 
-        <script>
-            // Bestaande functies en variabelen behouden
-            function pasFooterAan() {
-                const footer = document.querySelector('footer');
-                const windowHoogte = window.innerHeight;
-                const bodyHoogte = document.body.offsetHeight;
+            <article class="card" data-page="1" data-genre="actie" data-platform="pc">
+                <img src="images/5.png" alt="">
+                <article class="card-content">
+                    <h3>Ruimte Gevechten</h3>
+                    <p>Actie | PC</p>
+                    <a href="tamer-review_js.html?game=2" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="1" data-genre="strategie" data-platform="pc">
+                <img src="images/6.png" alt="">
+                <article class="card-content">
+                    <h3>Middeleeuws Beleg</h3>
+                    <p>Strategie | PC</p>
+                    <a href="tamer-review_php.php?game=2" class="btn">Bekijk details</a>
+                </article>
+            </article>
 
-                if (bodyHoogte < windowHoogte) {
-                    footer.style.position = 'fixed';
-                    footer.style.bottom = '0';
-                    footer.style.width = '100%';
-                } else {
-                    footer.style.position = 'static';
-                }
+            <article class="card" data-page="1" data-genre="simulatie" data-platform="pc mobile">
+                <img src="images/7.png" alt="">
+                <article class="card-content">
+                    <h3>Farm week</h3>
+                    <p>Simulatie | PC, MOBILE</p>
+                    <a href="max-review_php.php?game=1" class="btn">Bekijk details</a>
+                </article>
+            </article>
+
+            <article class="card" data-page="1" data-genre="strategie actie" data-platform="pc console">
+                <img src="images/8.png" alt="">
+                <article class="card-content">
+                    <h3>Military warfare</h3>
+                    <p>Strategie, Actie | PC, Console</p>
+                    <a href="max-review_php.php?game=2" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            
+            <article class="card" data-page="2" data-genre="rpg" data-platform="ps5 xbox">
+                <img src="images/9.png" alt="">
+                <article class="card-content">
+                    <h3>Draken Vlucht</h3>
+                    <p>RPG | PS5, Xbox</p>
+                    <a href="details.html?game=9" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="2" data-genre="actie" data-platform="pc ps5">
+                <img src="images/10.png" alt="">
+                <article class="card-content">
+                    <h3>Nachtelijke Schaduw</h3>
+                    <p>Actie | PC, PS5</p>
+                    <a href="details.html?game=10" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="2" data-genre="strategie" data-platform="pc">
+                <img src="images/11.png" alt="">
+                <article class="card-content">
+                    <h3>Industrie Magneet</h3>
+                    <p>Strategie | PC</p>
+                    <a href="details.html?game=11" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="2" data-genre="avontuur" data-platform="xbox">
+                <img src="images/12.png" alt="">
+                <article class="card-content">
+                    <h3>Grot van Vergetelheid</h3>
+                    <p>Avontuur | Xbox</p>
+                    <a href="details.html?game=12" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            
+            <article class="card" data-page="2" data-genre="rpg" data-platform="pc ps5 xbox">
+                <img src="images/13.png" alt="">
+                <article class="card-content">
+                    <h3>Elementaire Kracht</h3>
+                    <p>RPG | Alle</p>
+                    <a href="details.html?game=13" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="2" data-genre="actie avontuur" data-platform="ps5 xbox">
+                <img src="images/14.png" alt="">
+                <article class="card-content">
+                    <h3>Jungle Overleving</h3>
+                    <p>Actie, Avontuur | PS5, Xbox</p>
+                    <a href="details.html?game=14" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="2" data-genre="strategie" data-platform="pc">
+                <img src="images/15.png" alt="">
+                <article class="card-content">
+                    <h3>Toren Verdediging X</h3>
+                    <p>Strategie | PC</p>
+                    <a href="details.html?game=15" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            <article class="card" data-page="2" data-genre="race" data-platform="pc ps5">
+                <img src="images/16.png" alt="">
+                <article class="card-content">
+                    <h3>Grand Prix 2026</h3>
+                    <p>Race | PC, PS5</p>
+                    <a href="details.html?game=16" class="btn">Bekijk details</a>
+                </article>
+            </article>
+            </section>
+
+        <nav class="pagination" id="pagination-nav">
+            <a href="#" class="page-link active" data-page="1">1</a>
+            <a href="#" class="page-link" data-page="2">2</a>
+            <a href="#" class="page-link" data-page="3">3</a>
+        </nav>
+
+    </main>
+
+    <footer>
+        <article class="container">
+            <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
+        </article>
+    </footer>
+
+    <script>
+        // Bestaande functies en variabelen behouden
+        function pasFooterAan() {
+            const footer = document.querySelector('footer');
+            const windowHoogte = window.innerHeight;
+            const bodyHoogte = document.body.offsetHeight;
+
+            if (bodyHoogte < windowHoogte) {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+                footer.style.width = '100%';
+            } else {
+                footer.style.position = 'static';
             }
+        }
 
-            window.addEventListener('load', pasFooterAan);
-            window.addEventListener('resize', pasFooterAan);
+        window.addEventListener('load', pasFooterAan);
+        window.addEventListener('resize', pasFooterAan);
 
-            const zoekVeld = document.getElementById('search');
-            const genreSelect = document.getElementById('genre');
-            const platformSelect = document.getElementById('platform');
-            const alleKaarten = document.querySelectorAll('.card');
-            const paginatieLinks = document.querySelectorAll('.page-link');
-            let huidigePagina = 1; // Start op de eerste pagina
+        const zoekVeld = document.getElementById('search');
+        const genreSelect = document.getElementById('genre');
+        const platformSelect = document.getElementById('platform');
+        const alleKaarten = document.querySelectorAll('.card');
+        const paginatieLinks = document.querySelectorAll('.page-link');
+        let huidigePagina = 1; // Start op de eerste pagina
 
-            // Functie voor paginering
-            function toonPagina(paginaNummer) {
-                huidigePagina = paginaNummer;
-                // Verwijder 'active' klasse van alle links
-                paginatieLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-                // Voeg 'active' klasse toe aan de geselecteerde link
-                document.querySelector(`.page-link[data-page="${paginaNummer}"]`).classList.add('active');
-
-                // Roep de filterfunctie aan om de kaarten te tonen/verbergen
-                filterGames();
-            }
-
-            // Functie voor games filteren EN pagineren
-            function filterGames() {
-                const zoekTekst = zoekVeld.value.toLowerCase();
-                const gekozenGenre = genreSelect.value.toLowerCase();
-                const gekozenPlatform = platformSelect.value.toLowerCase();
-
-                alleKaarten.forEach(kaart => {
-                    const kaartPagina = parseInt(kaart.getAttribute('data-page'));
-                    const titel = kaart.querySelector('h3').innerText.toLowerCase();
-                    const infoTekst = kaart.querySelector('p').innerText.toLowerCase();
-                    
-                    // Controleer of de kaart op de huidige pagina staat
-                    const matchPagina = kaartPagina === huidigePagina;
-
-                    // Bestaande filterlogica
-                    const matchZoek = titel.includes(zoekTekst);
-                    const matchGenre = gekozenGenre === 'alle' || infoTekst.includes(gekozenGenre);
-                    const matchPlatform = gekozenPlatform === 'alle' || infoTekst.includes(gekozenPlatform);
-
-                    // Toon de kaart als deze op de huidige pagina staat EN aan de filters voldoet
-                    if (matchPagina && matchZoek && matchGenre && matchPlatform) {
-                        kaart.style.display = 'block'; // Gebruik 'block' voor grid layout
-                    } else {
-                        kaart.style.display = 'none';
-                    }
-                });
-
-                pasFooterAan();
-            }
-
-            // Event listeners voor filters
-            zoekVeld.addEventListener('keyup', filterGames);
-            genreSelect.addEventListener('change', filterGames);
-            platformSelect.addEventListener('change', filterGames);
-
-            // Event listeners voor paginatie
+        // Functie voor paginering
+        function toonPagina(paginaNummer) {
+            huidigePagina = paginaNummer;
+            // Verwijder 'active' klasse van alle links
             paginatieLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Voorkom dat de pagina herlaadt
-                    const pagina = parseInt(e.target.getAttribute('data-page'));
-                    toonPagina(pagina);
-                });
+                link.classList.remove('active');
+            });
+            // Voeg 'active' klasse toe aan de geselecteerde link
+            document.querySelector(`.page-link[data-page="${paginaNummer}"]`).classList.add('active');
+
+            // Roep de filterfunctie aan om de kaarten te tonen/verbergen
+            filterGames();
+        }
+
+        // Functie voor games filteren EN pagineren
+        function filterGames() {
+            const zoekTekst = zoekVeld.value.toLowerCase();
+            const gekozenGenre = genreSelect.value.toLowerCase();
+            const gekozenPlatform = platformSelect.value.toLowerCase();
+
+            alleKaarten.forEach(kaart => {
+                const kaartPagina = parseInt(kaart.getAttribute('data-page'));
+                const titel = kaart.querySelector('h3').innerText.toLowerCase();
+                // Haal de genre- en platforminformatie op uit de data-attributen voor nauwkeuriger filteren
+                const kaartGenres = kaart.getAttribute('data-genre').toLowerCase();
+                const kaartPlatforms = kaart.getAttribute('data-platform').toLowerCase();
+                
+                // Controleer of de kaart op de huidige pagina staat
+                const matchPagina = kaartPagina === huidigePagina;
+
+                // Bestaande filterlogica
+                const matchZoek = titel.includes(zoekTekst);
+                // Controleer of de gekozen genre (of 'alle') in de genres van de kaart voorkomt
+                const matchGenre = gekozenGenre === 'alle' || kaartGenres.includes(gekozenGenre);
+                // Controleer of het gekozen platform (of 'alle') in de platforms van de kaart voorkomt
+                const matchPlatform = gekozenPlatform === 'alle' || kaartPlatforms.includes(gekozenPlatform);
+
+                // Toon de kaart als deze op de huidige pagina staat EN aan de filters voldoet
+                if (matchPagina && matchZoek && matchGenre && matchPlatform) {
+                    kaart.style.display = 'block'; // Gebruik 'block' voor grid layout
+                } else {
+                    kaart.style.display = 'none';
+                }
             });
 
-            // Roep toonPagina aan bij het laden om alleen pagina 1 te tonen
-            document.addEventListener('DOMContentLoaded', () => {
-                toonPagina(huidigePagina); // Toon de standaardpagina (1)
+            pasFooterAan();
+        }
+
+        // Event listeners voor filters
+        zoekVeld.addEventListener('keyup', filterGames);
+        genreSelect.addEventListener('change', filterGames);
+        platformSelect.addEventListener('change', filterGames);
+
+        // Event listeners voor paginatie
+        paginatieLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Voorkom dat de pagina herlaadt
+                const pagina = parseInt(e.target.getAttribute('data-page'));
+                toonPagina(pagina);
             });
+        });
 
-        </script>
-    </body>
+        // Roep toonPagina aan bij het laden om alleen pagina 1 te tonen
+        document.addEventListener('DOMContentLoaded', () => {
+            toonPagina(huidigePagina); // Toon de standaardpagina (1)
+        });
 
-    </html>
+    </script>
+</body>
+
+</html>

@@ -18,8 +18,8 @@
             "prijs" => 24,99,
             "pegi" => 7,
             "platform" => "PC",
-            "cover" => "15.png",
-            "screenshot" => "15detail.png",
+            "cover" => "images/15.png",
+            "screenshot" => "images/15detail.png",
             "beschrijving" => "Toren Verdediging is een meeslepende, middeleeuwse fantasy Tower Defense game waarin de speler de rol aanneemt van de Veldmaarschalk van Aethelgard. De laatste overgebleven stad, Ardentor, wordt voortdurend bedreigd door de dreigende legers van de Schaduwkoning – een eindeloze stroom van monsters, demonen en belegeringswapens die de verdedigingslinies willen doorbreken.",
             "developer" => "Ubisoft"
         ],
@@ -29,8 +29,8 @@
             "prijs" => 54,99,
             "pegi" => 7,
             "platform" => "PC", "PS5",
-            "cover" => "16.png",
-            "screenshot" => "16detail.png",
+            "cover" => "images/16.png",
+            "screenshot" => "images/16detail.png",
             "beschrijving" => "Grand Prix 2026 is de ultieme race-simulatie die de speler onderdompelt in de toekomst van de single-seater motorsport. Het spel legt de nadruk op realisme, diepgaande technische afstellingen en de intense competitie van de topklasse racen in het jaar 2026. Met nieuwe aerodynamische reglementen en de nadruk op duurzame, krachtige hybride motoren, daagt GP 2026 je uit om niet alleen de snelste, maar ook de slimste coureur op de grid te zijn.",
             "developer" => "EA"
         ]

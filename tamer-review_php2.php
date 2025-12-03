@@ -13,26 +13,26 @@
     <?php
     $gamesCatalogus = [
         "game1" => [
-            "titel" => "",
-            "genre" => "",
-            "prijs" => ,
-            "pegi" => ,
-            "platform" => "",
-            "cover" => "",
-            "screenshot" => "",
-            "beschrijving" => "",
-            "developer" => ""
+            "titel" => "Industie Magneet",
+            "genre" => "Strategie",
+            "prijs" => 24,99,
+            "pegi" => 12,
+            "platform" => " PC",
+            "cover" => "11.png",
+            "screenshot" => "11detail.png",
+            "beschrijving" => "Industrie Magneet is een diepgaande en uitdagende management-simulatie waarin de speler de leiding krijgt over een startend industrieel conglomeraat in een dynamische, post-industriële wereld. De planeet kampt met extreme grondstofschaarste en hoge milieuvervuiling. Jouw doel is om een onstuitbare, duurzame en winstgevende productielijn te bouwen die de wereld domineert, terwijl je de complexe logistiek en economische markten in balans houdt.",
+            "developer" => "Nintendo"
         ],
         "game2" => [
-            "titel" => "",
-            "genre" => "",
-            "prijs" => ,
-            "pegi" => ,
-            "platform" => "",
-            "cover" => "",
-            "screenshot" => "",
-            "beschrijving" => "",
-            "developer" => ""
+            "titel" => "Grot van Vergetelheid",
+            "genre" => "Avontuur",
+            "prijs" => 49,99,
+            "pegi" => 16,
+            "platform" => "Xbox",
+            "cover" => "12.png",
+            "screenshot" => "12detail.png",
+            "beschrijving" => "Grot van Vergetelheid is een duistere en meedogenloze dungeon crawler die de speler meeneemt naar de diepten van de aarde. Deze Grot is niet zomaar een tunnelstelsel, maar een levend, ademend doolhof dat de herinneringen en angsten van degenen die erin verdwalen, gebruikt.",
+            "developer" => "Rockstar Games"
         ]
     ];
 

@@ -96,8 +96,8 @@
                 <article style="background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px;">
                     <h4>Specificaties</h4>
                     <ul>
-                        <li><strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?></li>
-                        <li><strong>PEGI Rating:</strong> <?= $geselecteerdeGame['pegi'] ?>+</li>
+                        <strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?>
+                        <br><strong>PEGI Rating:</strong> <?= $geselecteerdeGame['pegi'] ?>+
                     </ul>
                 </article>
                 

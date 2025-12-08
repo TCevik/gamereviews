@@ -15,7 +15,7 @@
         "game1" => [
             "titel" => "Toren verdediging",
             "genre" => "Strategie",
-            "prijs" => 24,99,
+            "prijs" => 24.99,
             "pegi" => 7,
             "platform" => "PC",
             "cover" => "images/15.png",
@@ -26,7 +26,7 @@
         "game2" => [
             "titel" => "Grand Prix 2026",
             "genre" => "Race",
-            "prijs" => 54,99,
+            "prijs" => 54.99,
             "pegi" => 7,
             "platform" => "PC", "PS5",
             "cover" => "images/16.png",

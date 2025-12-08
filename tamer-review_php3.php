@@ -69,27 +69,27 @@
 
 <?php
 $games = [
-    "Epische Reis I" => [
-        "titel" => "",
-        "genre" => ["", "", ""],
+    "Boardwalk billionaires" => [
+        "titel" => "Boardwalk billionaires",
+        "genre" => ["Strategie", "Economische simulatie"],
         "fotos" => ["", "", ""],
-        "pegi" => ,
-        "beschrijving" => "",
-        "rating" => ,
+        "pegi" => 3,
+        "beschrijving" => "Boardwalk billionaires een moderne digitale versie van het vastgoed-handelsspel, waarbij spelers investeren in steden wereldwijd, met willekeurige 'marktschommelingen' en aanpasbare regels.",
+        "rating" => 8.4,
         "trailer" => "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "platform" => ["", ""],
-        "maker" => ""
+        "platform" => ["Playstation 5", "Xbox"],
+        "maker" => "Paradox interactive"
     ],
-    "Middeleeuws Beleg" => [
-        "titel" => "",
-        "genre" => ["", ""],
+    "Life weaver" => [
+        "titel" => "Life weaver",
+        "genre" => ["Levenssimulatie", "Management"],
         "fotos" => ["", "", ""],
-        "pegi" => ,
-        "beschrijving" => "",
-        "rating" => ,
+        "pegi" => 12,
+        "beschrijving" => "Life weaver Een diepere levenssimulatiegame waarin je niet alleen personages beheert, maar ook de wetten, economie en cultuur van hun kleine virtuele samenleving kunt aanpassen.",
+        "rating" => 7.9,
         "trailer" => "",
-        "platform" => ["", ""],
-        "maker" => ""
+        "platform" => ["PC", "Playstation 5"],
+        "maker" => "EA"
     ]
 ];
 

@@ -69,27 +69,27 @@
 
 <?php
 $games = [
-    "Epische Reis I" => [
-        "titel" => "",
-        "genre" => ["", "", ""],
+    "Plumber's Quest: Galaxy Jumps" => [
+        "titel" => "Plumber's Quest: Galaxy Jumps",
+        "genre" => ["2D platformer", "actie"],
         "fotos" => ["", "", ""],
-        "pegi" => ,
-        "beschrijving" => "",
-        "rating" => ,
+        "pegi" => 7,
+        "beschrijving" => "Een snelle 2D-platformer met power-ups, verborgen levels en een focus op precisie-springen en het verslaan van een schildpad-achtige aartsvijand in een kleurrijke wereld.",
+        "rating" => 8.1,
         "trailer" => "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "platform" => ["", ""],
-        "maker" => ""
+        "platform" => ["Nintendo switch"],
+        "maker" => "Nintendo"
     ],
-    "Middeleeuws Beleg" => [
-        "titel" => "",
+    "Blocktopia" => [
+        "titel" => "Blocktopia",
         "genre" => ["", ""],
         "fotos" => ["", "", ""],
         "pegi" => ,
-        "beschrijving" => "",
+        "beschrijving" => "Een open-wereld sandbox spel met procedureel gegenereerde landschappen. Het combineert crafting en overleving, maar voegt magische elementen en complexe machines toe.",
         "rating" => ,
         "trailer" => "",
         "platform" => ["", ""],
-        "maker" => ""
+        "maker" => "Mojang studios"
     ]
 ];
 

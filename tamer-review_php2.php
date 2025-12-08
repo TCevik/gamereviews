@@ -15,7 +15,7 @@
         "game1" => [
             "titel" => "Industie Magneet",
             "genre" => "Strategie",
-            "prijs" => 24,99,
+            "prijs" => 24.99,
             "pegi" => 12,
             "platform" => " PC",
             "cover" => "images/11.png",
@@ -26,7 +26,7 @@
         "game2" => [
             "titel" => "Grot van Vergetelheid",
             "genre" => "Avontuur",
-            "prijs" => 49,99,
+            "prijs" => 49.99,
             "pegi" => 16,
             "platform" => "Xbox",
              "cover" => "images/12.png",

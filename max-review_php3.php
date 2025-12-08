@@ -79,7 +79,7 @@ $games = [
         "trailer" => "https://www.youtube.com/embed/XvQNlGKNC6o?si=gpu9n0lZZZAF_ec2",
         "platform" => ["Nintendo switch"],
         "maker" => "Nintendo"
-    ],
+    ], 
     "Blocktopia" => [
         "titel" => "Blocktopia",
         "genre" => ["Sandbox"],

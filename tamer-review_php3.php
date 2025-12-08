@@ -96,18 +96,18 @@ $games = [
 $gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : 0;
 $leeftijdIngevuld = isset($_POST['leeftijd']);
 
-$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Epische Reis I";
+$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Life weaver";
 
 $geselecteerdeGameData = null;
 
 switch ($huidigeTitel) {
-    case "Middeleeuws Beleg":
-        $geselecteerdeGameData = $games["Middeleeuws Beleg"];
+    case "Boardwalk billionaires":
+        $geselecteerdeGameData = $games["Boardwalk billionaires"];
         break;
-    case "Epische Reis I":
+    case "Life weaver":
     default:
-        $geselecteerdeGameData = $games["Epische Reis I"];
-        $huidigeTitel = "Epische Reis I";
+        $geselecteerdeGameData = $games["Life weaver"];
+        $huidigeTitel = "Life weaver";
         break;
 }
 ?>
@@ -140,8 +140,8 @@ switch ($huidigeTitel) {
             </form>
             <br>
             <p>Kies een andere game:</p>
-            <a href="?titel=Epische Reis I" class="btn" style="background-color: #333; font-size: 0.8rem;">Epische Reis I</a>
-            <a href="?titel=Middeleeuws Beleg" class="btn" style="background-color: #333; font-size: 0.8rem;">Middeleeuws Beleg</a>
+            <a href="?titel=Life weaver" class="btn" style="background-color: #333; font-size: 0.8rem;">Life weaver I</a>
+            <a href="?titel=Boardwalk billionaires" class="btn" style="background-color: #333; font-size: 0.8rem;">Boardwalk billionaires</a>
         </section>
 
         <?php if ($leeftijdIngevuld): ?>

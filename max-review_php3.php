@@ -76,7 +76,7 @@ $games = [
         "pegi" => 7,
         "beschrijving" => "Een snelle 2D-platformer met power-ups, verborgen levels en een focus op precisie-springen en het verslaan van een schildpad-achtige aartsvijand in een kleurrijke wereld.",
         "rating" => 8.1,
-        "trailer" => "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "trailer" => "https://www.youtube.com/watch?v=XvQNlGKNC6o",
         "platform" => ["Nintendo switch"],
         "maker" => "Nintendo"
     ],
@@ -87,7 +87,7 @@ $games = [
         "pegi" => 7,
         "beschrijving" => "Een open-wereld sandbox spel met procedureel gegenereerde landschappen. Het combineert crafting en overleving, maar voegt magische elementen en complexe machines toe.",
         "rating" => 8.9,
-        "trailer" => "",
+        "trailer" => "https://www.youtube.com/watch?v=MmB9b5njVbA",
         "platform" => ["PC", "Xbox", "Playstation 5", "Nintendo"],
         "maker" => "Mojang studios"
     ]

@@ -241,6 +241,29 @@
                 `;
             }
         }
+
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function initialiseerGameSelector() {
+            const gameSelector = document.getElementById('gameSelector');
+            const gekozenTitel = getUrlParameter('game');
+            
+            if (gekozenTitel) {
+                const gameExists = games.some(game => game.titel === gekozenTitel);
+
+                if (gameExists) {
+                    gameSelector.value = gekozenTitel;
+                }
+            }
+        }
+
+        window.onload = initialiseerGameSelector;
+        
     </script>
 </body>
 

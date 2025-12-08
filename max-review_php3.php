@@ -82,13 +82,13 @@ $games = [
     ],
     "Blocktopia" => [
         "titel" => "Blocktopia",
-        "genre" => ["", ""],
+        "genre" => ["Sandbox"],
         "fotos" => ["", "", ""],
-        "pegi" => ,
+        "pegi" => 7,
         "beschrijving" => "Een open-wereld sandbox spel met procedureel gegenereerde landschappen. Het combineert crafting en overleving, maar voegt magische elementen en complexe machines toe.",
-        "rating" => ,
+        "rating" => 8.9,
         "trailer" => "",
-        "platform" => ["", ""],
+        "platform" => ["PC", "Xbox", "Playstation 5", "Nintendo"],
         "maker" => "Mojang studios"
     ]
 ];

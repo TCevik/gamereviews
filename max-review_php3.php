@@ -133,7 +133,7 @@ switch ($huidigeTitel) {
         
         <section class="age-form">
             <h3>Instellingen</h3>
-            <form method="POST" action="tamer-review_php3.php?titel=<?= urlencode($huidigeTitel) ?>">
+            <form method="POST" action="max-review_php3.php?titel=<?= urlencode($huidigeTitel) ?>">
                 <label for="leeftijd">Voer je leeftijd in om de review te bekijken:</label>
                 <input type="number" id="leeftijd" name="leeftijd" value="<?= $leeftijdIngevuld ? $gebruikersLeeftijd : '' ?>" required min="0" max="120" style="padding: 5px;">
                 <button type="submit" class="btn" style="padding: 5px 10px; font-size: 0.9rem;">Bevestig Leeftijd</button>

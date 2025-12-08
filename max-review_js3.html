@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Review JS Final - Game Stars</title>
+    <meta name="author" content="Max">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .controls-area {
+            background-color: var(--light-green-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .controls-area select, .controls-area input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 300px;
+        }
+        .hidden {
+            display: none;
+        }
+        .error-box {
+            background-color: #ffdddd;
+            color: #d8000c;
+            border: 1px solid #d8000c;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tag {
+            display: inline-block;
+            background-color: var(--dark-green-text);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-top: 20px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body id="reviewb">
+
+    <header>
+        <article class="nav-container">
+            <article style="display: flex;">
+                <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
+                <a href="index.html" class="logo">Game Stars</a>
+            </article>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="merchandise.html">Merchandise</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </article>
+    </header>
+
+    <main class="container">
+        <section class="controls-area">
+            <h2>Kies een Game & Check Leeftijd</h2>
+            
+            <label for="ageInput">Wat is je leeftijd?</label>
+            <input type="number" id="ageInput" placeholder="Voer hier je leeftijd in (bijv. 16)">
+
+            <label for="gameSelector">Welke game wil je zien?</label>
+            <select id="gameSelector">
+                <option value="Futuristische Racer">Futuristische Racer</option>
+                <option value="Ruimte Gevechten">Ruimte Gevechten</option>
+            </select>
+
+            <button onclick="verwerkKeuze()" class="btn">Toon Review</button>
+        </section>
+
+        <article id="resultaatGebied"></article>
+
+    </main>
+
+    <footer>
+        <article class="container">
+            <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
+        </article>
+    </footer>
+
+    <script>
+        const games = [
+            {
+                titel: "",
+                genre: ["", "", ""],
+                fotos: ["", "", ""],
+                pegi: ,
+                beschrijving: "",
+                rating: ,
+                trailer: "",
+                platform: ["", ""],
+                maker: ""
+            },
+            {
+                titel: "",
+                genre: ["", ""],
+                fotos: ["", "", ""], 
+                pegi: ,
+                beschrijving: "",
+                rating: ,
+                trailer: "",
+                platform: ["", "", ""],
+                maker: ""
+            }
+        ];
+
+        function verwerkKeuze() {
+            const leeftijdInput = document.getElementById('ageInput').value;
+            const gekozenTitel = document.getElementById('gameSelector').value;
+            const resultaatGebied = document.getElementById('resultaatGebied');
+
+            resultaatGebied.innerHTML = "";
+
+            if (!leeftijdInput) {
+                alert("Vul alsjeblieft eerst je leeftijd in.");
+                return;
+            }
+
+            const leeftijd = parseInt(leeftijdInput);
+
+            const gekozenGame = games.find(game => game.titel === gekozenTitel);
+
+            if (!gekozenGame) {
+                console.error("Game niet gevonden");
+                return;
+            }
+
+            if (leeftijd >= gekozenGame.pegi) {
+                let genresHTML = "";
+                gekozenGame.genre.forEach(g => {
+                    genresHTML += `<span class="tag">${g}</span>`;
+                });
+
+                let fotoHTML = "";
+                gekozenGame.fotos.forEach(foto => {
+                    fotoHTML += `<img src="${foto}" alt="${gekozenGame.titel} screenshot">`;
+                });
+
+                let platformHTML = "";
+                gekozenGame.platform.forEach(p => {
+                    platformHTML += `${p} `;
+                });
+
+                const htmlContent = `
+                    <h1 class="page-title">Review: ${gekozenGame.titel}</h1>
+                    <article class="card" id="review" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+                        
+                        <div style="margin-bottom: 15px;">
+                            ${genresHTML}
+                        </div>
+
+                        <div class="gallery">
+                            ${fotoHTML}
+                        </div>
+
+                        <article class="card-content">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <h3>Score: ${gekozenGame.rating}/10</h3>
+                                <span style="font-size: 0.9em; color: #555;">Maker: ${gekozenGame.maker}</span>
+                            </div>
+                            
+                            <p>${gekozenGame.beschrijving}</p>
+
+                            <article style="background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px;">
+                                <h4>Game Info</h4>
+                                <p><strong>PEGI:</strong> ${gekozenGame.pegi}+</p>
+                                <p><strong>Platforms:</strong> ${platformHTML}</p>
+                            </article>
+
+                            <div class="video-wrapper">
+                                <iframe src="${gekozenGame.trailer}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </article>
+                    </article>
+                `;
+                resultaatGebied.innerHTML = htmlContent;
+
+            } else {
+                resultaatGebied.innerHTML = `
+                    <div class="error-box">
+                        <h3>Toegang Geweigerd</h3>
+                        <p>Je bent ${leeftijd} jaar oud.</p>
+                        <p>De game <strong>${gekozenGame.titel}</strong> heeft een PEGI-leeftijd van <strong>${gekozenGame.pegi}+</strong>.</p>
+                        <p>Je bent helaas te jong om deze review te bekijken.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -76,7 +76,7 @@ $games = [
         "pegi" => 3,
         "beschrijving" => "Boardwalk billionaires een moderne digitale versie van het vastgoed-handelsspel, waarbij spelers investeren in steden wereldwijd, met willekeurige 'marktschommelingen' en aanpasbare regels.",
         "rating" => 8.4,
-        "trailer" => "https://www.youtube.com/watch?v=mkAcX4Lw7Is",
+        "trailer" => "https://www.youtube.com/embed/mkAcX4Lw7Is?si=jjsphed4erWKVOVu",
         "platform" => ["Playstation 5", "Xbox"],
         "maker" => "Paradox interactive"
     ],
@@ -87,7 +87,7 @@ $games = [
         "pegi" => 12,
         "beschrijving" => "Life weaver Een diepere levenssimulatiegame waarin je niet alleen personages beheert, maar ook de wetten, economie en cultuur van hun kleine virtuele samenleving kunt aanpassen.",
         "rating" => 7.9,
-        "trailer" => "https://www.youtube.com/watch?v=DyNv44QR14g",
+        "trailer" => "https://www.youtube.com/embed/DyNv44QR14g?si=T8EWZYu9cseuSYKS",
         "platform" => ["PC", "Playstation 5"],
         "maker" => "EA"
     ]

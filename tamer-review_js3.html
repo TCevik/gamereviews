@@ -22,16 +22,20 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .controls-area select, .controls-area input {
+
+        .controls-area select,
+        .controls-area input {
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
             width: 100%;
             max-width: 300px;
         }
+
         .hidden {
             display: none;
         }
+
         .error-box {
             background-color: #ffdddd;
             color: #d8000c;
@@ -41,19 +45,22 @@
             text-align: center;
             margin-top: 20px;
         }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin: 20px 0;
         }
+
         .gallery img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .tag {
             display: inline-block;
             background-color: var(--dark-green-text);
@@ -63,12 +70,14 @@
             font-size: 0.85rem;
             margin-right: 5px;
         }
+
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             margin-top: 20px;
         }
+
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -102,16 +111,15 @@
     <main class="container">
         <section class="controls-area">
             <h2>Kies een Game & Check Leeftijd</h2>
-            
+
             <label for="ageInput">Wat is je leeftijd?</label>
             <input type="number" id="ageInput" placeholder="Voer hier je leeftijd in (bijv. 16)">
 
             <label for="gameSelector">Welke game wil je zien?</label>
             <select id="gameSelector">
-                <option value="Futuristische Racer">Futuristische Racer</option>
-                <option value="Ruimte Gevechten">Ruimte Gevechten</option>
+                <option value="Poly-Shift: The Temporal Stack">Poly-Shift: The Temporal Stack</option>
+                <option value="Metropolis Vice: Underworld Echoes">Metropolis Vice: Underworld Echoes</option>
             </select>
-
             <button onclick="verwerkKeuze()" class="btn">Toon Review</button>
         </section>
 
@@ -134,14 +142,14 @@
                 pegi: 3,
                 beschrijving: "Een snelle puzzelgame waarbij spelers vallende, driedimensionale blokken moeten rangschikken. De game introduceert een 'tijd-manipulatie' mechanisme om fouten te herstellen.",
                 rating: 6.9,
-                trailer: "https://www.youtube.com/watch?v=PFVL6t8IHE8",
+                trailer: "https://www.youtube.com/embed/PFVL6t8IHE8?si=3M-q5EJfMTaR4hvi",
                 platform: ["Mobiel", "PC", "Nintendo switch"],
                 maker: "Bandai Namco"
             },
             {
                 titel: "Metropolis Vice: Underworld Echoes",
                 genre: ["Open-world", "Action"],
-                fotos: ["20", "20detail", ""], 
+                fotos: ["20", "20detail", ""],
                 pegi: 18,
                 beschrijving: "Een open-wereld actie-avontuur gesitueerd in een fictieve megastad, met de nadruk op het opbouwen van een crimineel imperium door middel van voertuigachtervolgingen en overvallen.",
                 rating: 8.7,
@@ -235,4 +243,5 @@
         }
     </script>
 </body>
+
 </html>

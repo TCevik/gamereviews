@@ -88,7 +88,7 @@ $games = [
         "beschrijving" => "Een open-wereld sandbox spel met procedureel gegenereerde landschappen. Het combineert crafting en overleving, maar voegt magische elementen en complexe machines toe.",
         "rating" => 8.9,
         "trailer" => "https://www.youtube.com/embed/MmB9b5njVbA?si=RXqXuu7QRp6CQcXk",
-        "platform" => ["PC", "Xbox", "Playstation 5", "Nintendo"],
+        "platform" => ["PC", "Xbox", "Playstation 5", "Nintendo Switch"],
         "maker" => "Mojang studios"
     ]
 ];

@@ -21,7 +21,7 @@
             "cover" => "images/11.png",
             "screenshot" => "images/11detail.png",
             "beschrijving" => "Industrie Magneet is een diepgaande en uitdagende management-simulatie waarin de speler de leiding krijgt over een startend industrieel conglomeraat in een dynamische, post-industriële wereld. De planeet kampt met extreme grondstofschaarste en hoge milieuvervuiling. Jouw doel is om een onstuitbare, duurzame en winstgevende productielijn te bouwen die de wereld domineert, terwijl je de complexe logistiek en economische markten in balans houdt.",
-            "developer" => "nintendo"
+            "developer" => "Nintendo"
         ],
         "game2" => [
             "titel" => "Grot van Vergetelheid",

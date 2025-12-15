@@ -153,8 +153,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
 
         <section class="age-form">
              <p>Kies een game:</p>
-            <a href="?titel=Plumber's Quest: Galaxy Jumps&leeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Plumber's Quest</a>
-            <a href="?titel=Blocktopia&leeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Blocktopia</a>
+            <a href="?titel=Aetheria%3A+Eternal+Harvestleeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Eternal Harvest</a>
+            <a href="?titel=Cyber-Duel: Neon Blood&leeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Cyber-Duel: Neon Blood</a>
         </section>
 
         <?php if ($leeftijdIngevuld): ?>

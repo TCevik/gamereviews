@@ -70,11 +70,8 @@ $games = [
         "genre" => ["Farming" , "Adventure"],
         "pegi" => 7,
         "beschrijving" => "Een rustgevende simulatie waarin je een vervallen drijvende boerderij erft. Zaai, vis, ontdek mysterieuze luchteilanden en bouw relaties op met de excentrieke, gevleugelde bewoners.",
-<<<<<<< HEAD
         "fotos" => ["images/25.png"],
-=======
         "fotos" => ["images/25.png"], 
->>>>>>> a3535ce780352b47b07c56e0a56e6338e186fcc6
         "rating" => 8.7,
         "trailer" => "https://www.youtube.com/embed/ot7uXNQskhs?si=bxpHnlQSGyksfmwZ",
         "platform" => ["PC" , "Nintendo Switch" , "Mobile"],
@@ -84,11 +81,8 @@ $games = [
         "titel" => "Cyber-Duel: Neon-Blood",
         "genre" => ["Fighter" , "Actie"],
         "pegi" => 16,
-<<<<<<< HEAD
         "fotos" => ["images/26.png"],
-=======
         "fotos" => ["images/26.png"], 
->>>>>>> a3535ce780352b47b07c56e0a56e6338e186fcc6
         "beschrijving" => "Een snelle, 1-op-1 vechtgame die zich afspeelt in een dystopische, neonverlichte metropool. Kies uit diverse cyborgs en mutanten met unieke, energieke vechtstijlen.",
         "rating" => 7.8,
         "trailer" => "https://www.youtube.com/embed/1INU3FOJsTw?si=f0eeym_OK1hQUOf9",

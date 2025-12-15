@@ -21,8 +21,8 @@
         "beschrijving" => "Farm weekis een boeiende boerderijsimulatiegame die beschikbaar is voor zowel PC als consoles. 
         Spelers beginnen met een klein stukje land en de droom om een bloeiende boerderij op te bouwen. De game combineert
          de ontspannende elementen van het verbouwen van gewassen en het fokken van dieren met strategische beslissingen en uitdagingen.",
-        "pluspunten" => "Goede customization, Makkelijk te begrijpen",
-       "minpunten" => "Zware game"
+        "pluspunten" => "Goede customization, Makkelijk te begrijpen.",
+       "minpunten" => "Je verveelt je snel aan het spel."
     ];
 
     $game2 = [
@@ -36,8 +36,8 @@
         "beschrijving" => "Military Warfare is een intense, snelle strategie- en actiegame die beschikbaar is voor PC en consoles.
          Duik in een wereld vol adrenaline-pompende gevechten waar tactische beslissingen en bliksemsnelle reflexen
           het verschil maken tussen overwinning en nederlaag.",
-        "pluspunten" => "Online multiplayer, Fast pased",
-        "minpunten" => "Veel sweats"
+        "pluspunten" => "Online multiplayer, Fast pased.",
+        "minpunten" => "De graphics zijn wat minder."
     ];
 
     if (isset($_GET['game']) && $_GET['game'] == '2') {

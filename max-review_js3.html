@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Review JS Final - Game Stars</title>
+    <title>Game Review JS 4 (Max) - Game Stars</title>
     <meta name="author" content="Max">
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -32,10 +32,6 @@
             max-width: 300px;
         }
 
-        .hidden {
-            display: none;
-        }
-
         .error-box {
             background-color: #ffdddd;
             color: #d8000c;
@@ -44,21 +40,6 @@
             border-radius: 8px;
             text-align: center;
             margin-top: 20px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .tag {
@@ -85,6 +66,60 @@
             width: 100%;
             height: 100%;
             border-radius: 8px;
+        }
+
+        /* Slideshow CSS */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
         }
     </style>
 </head>
@@ -160,6 +195,33 @@
             }
         ];
 
+        let slideIndex = 1;
+
+        // Slideshow functies
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            
+            if (!slides || slides.length === 0) return;
+
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+        }
+
         function verwerkKeuze() {
             const leeftijdInput = document.getElementById('ageInput').value;
             const gekozenTitel = document.getElementById('gameSelector').value;
@@ -187,10 +249,23 @@
                     genresHTML += `<span class="tag">${g}</span>`;
                 });
 
-                let fotoHTML = "";
+                // Slideshow genereren: Loopt door de array en maakt divs aan
+                let slidesHTML = "";
                 gekozenGame.fotos.forEach(foto => {
-                    fotoHTML += `<img src="${foto}" alt="${gekozenGame.titel} screenshot">`;
+                    slidesHTML += `
+                        <div class="mySlides fade">
+                            <img src="${foto}" alt="${gekozenGame.titel}">
+                        </div>
+                    `;
                 });
+
+                let slideshowHTML = `
+                    <div class="slideshow-container">
+                        ${slidesHTML}
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                `;
 
                 let platformHTML = "";
                 gekozenGame.platform.forEach(p => {
@@ -205,9 +280,7 @@
                             ${genresHTML}
                         </div>
 
-                        <div class="gallery">
-                            ${fotoHTML}
-                        </div>
+                        ${slideshowHTML}
 
                         <article class="card-content">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -230,6 +303,10 @@
                     </article>
                 `;
                 resultaatGebied.innerHTML = htmlContent;
+
+                // Start slideshow
+                slideIndex = 1;
+                showSlides(slideIndex);
 
             } else {
                 resultaatGebied.innerHTML = `

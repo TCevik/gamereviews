@@ -63,7 +63,6 @@
 <body id="reviewb">
 
 <?php
-// De nieuwe games array
 $games = [
     "Aetheria: Eternal Harvest" => [
         "titel" => "Aetheria: Eternal Harvest",
@@ -94,10 +93,8 @@ $games = [
 $gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : (isset($_GET['leeftijd']) ? (int)$_GET['leeftijd'] : 0);
 $leeftijdIngevuld = isset($_POST['leeftijd']) || isset($_GET['leeftijd']);
 
-// AANGEPAST: Standaard titel is nu Aetheria in plaats van Eldoria
 $huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Aetheria: Eternal Harvest";
 
-// AANGEPAST: Fallback naar Aetheria als de titel niet bestaat
 if (!array_key_exists($huidigeTitel, $games)) {
     $huidigeTitel = "Aetheria: Eternal Harvest";
 }

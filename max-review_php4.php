@@ -64,25 +64,25 @@
 
 <?php
 $games = [
-    "Plumber's Quest: Galaxy Jumps" => [
-        "titel" => "Plumber's Quest: Galaxy Jumps",
-        "genre" => ["2D platformer", "actie"],
-        "pegi" => 7,
-        "beschrijving" => "Een snelle 2D-platformer met power-ups, verborgen levels en een focus op precisie-springen en het verslaan van een schildpad-achtige aartsvijand in een kleurrijke wereld.",
-        "rating" => 8.1,
-        "trailer" => "https://www.youtube.com/embed/XvQNlGKNC6o?si=gpu9n0lZZZAF_ec2",
-        "platform" => ["Nintendo switch"],
-        "maker" => "Nintendo"
+    "Naam van game" => [
+        "titel" => "",
+        "genre" => [""],
+        "pegi" => ,
+        "beschrijving" => "",
+        "rating" => ,
+        "trailer" => "",
+        "platform" => [""],
+        "maker" => ""
     ], 
-    "Blocktopia" => [
-        "titel" => "Blocktopia",
-        "genre" => ["Sandbox"],
-        "pegi" => 7,
-        "beschrijving" => "Een open-wereld sandbox spel met procedureel gegenereerde landschappen. Het combineert crafting en overleving, maar voegt magische elementen en complexe machines toe.",
-        "rating" => 8.9,
-        "trailer" => "https://www.youtube.com/embed/MmB9b5njVbA?si=RXqXuu7QRp6CQcXk",
-        "platform" => ["PC", "Xbox", "Playstation 5", "Nintendo"],
-        "maker" => "Mojang studios"
+    "" => [
+        "titel" => "",
+        "genre" => [""],
+        "pegi" => ,
+        "beschrijving" => "",
+        "rating" => ,
+        "trailer" => "",
+        "platform" => [""],
+        "maker" => ""
     ]
 ];
 

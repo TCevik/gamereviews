@@ -64,25 +64,25 @@
 
 <?php
 $games = [
-    "Boardwalk billionaires" => [
-        "titel" => "Boardwalk billionaires",
-        "genre" => ["Strategie", "Economische simulatie"],
-        "pegi" => 3,
-        "beschrijving" => "Boardwalk billionaires is een moderne digitale versie van het vastgoed-handelsspel, waarbij spelers investeren in steden wereldwijd, met willekeurige 'marktschommelingen' en aanpasbare regels.",
-        "rating" => 8.4,
-        "trailer" => "https://www.youtube.com/embed/mkAcX4Lw7Is?si=jjsphed4erWKVOVu",
-        "platform" => ["Playstation 5", "Xbox"],
-        "maker" => "Paradox interactive"
-    ],
-    "Life weaver" => [
-        "titel" => "Life weaver",
-        "genre" => ["Levenssimulatie", "Management"],
-        "pegi" => 12,
-        "beschrijving" => "Life weaver: Een diepere levenssimulatiegame waarin je niet alleen personages beheert, maar ook de wetten, economie en cultuur van hun kleine virtuele samenleving kunt aanpassen.",
-        "rating" => 7.9,
-        "trailer" => "https://www.youtube.com/embed/DyNv44QR14g?si=T8EWZYu9cseuSYKS",
-        "platform" => ["PC", "Playstation 5"],
-        "maker" => "EA"
+    "Naam van game" => [
+        "titel" => "",
+        "genre" => [""],
+        "pegi" => ,
+        "beschrijving" => "",
+        "rating" => ,
+        "trailer" => "",
+        "platform" => [""],
+        "maker" => ""
+    ], 
+    "" => [
+        "titel" => "",
+        "genre" => [""],
+        "pegi" => ,
+        "beschrijving" => "",
+        "rating" => ,
+        "trailer" => "",
+        "platform" => [""],
+        "maker" => ""
     ]
 ];
 

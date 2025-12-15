@@ -64,25 +64,25 @@
 
 <?php
 $games = [
-    "Naam van game" => [
-        "titel" => "",
-        "genre" => [""],
-        "pegi" => ,
-        "beschrijving" => "",
-        "rating" => ,
-        "trailer" => "",
-        "platform" => [""],
-        "maker" => ""
+    "The Chronicles of Eldoria: Shadowfall" => [
+        "titel" => "The Chronicles of Eldoria: Shadowfall",
+        "genre" => ["Open-world"],
+        "pegi" => 12,
+        "beschrijving" => "en uitgestrekte fantasy RPG waarin je een 'Waker' bent, een monsterjager die door een land vol politieke intriges en oude magie reist om een opkomende duisternis te stoppen.",
+        "rating" => 6.7,
+        "trailer" => "https://www.youtube.com/embed/yWMu6JeT2g8?si=jEcoVfMCEmnhq5lp",
+        "platform" => ["PS5" , "Xbox" , "PC"],
+        "maker" => "CD projekt Red"
     ], 
-    "" => [
-        "titel" => "",
-        "genre" => [""],
-        "pegi" => ,
-        "beschrijving" => "",
-        "rating" => ,
-        "trailer" => "",
-        "platform" => [""],
-        "maker" => ""
+    "Infinite Snare" => [
+        "titel" => "Infinite Snare",
+        "genre" => ["Actie"],
+        "pegi" => 12,
+        "beschrijving" => "Een online multiplayer game voor 8 spelers, vastzittend in een constant veranderende, dodelijke doolhof. Werk samen om te ontsnappen, maar pas op: twee spelers zijn 'Saboteurs' wiens enige doel het is om de rest uit te schakelen.",
+        "rating" => 7.1,
+        "trailer" => "https://www.youtube.com/embed/9pyYq9lpjls?si=unB7qQ6FSacmNUvL",
+        "platform" => ["PC" , "Xbox" , "PS5" , "Mobile"],
+        "maker" => "Innersloth"
     ]
 ];
 

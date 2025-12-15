@@ -64,25 +64,25 @@
 
 <?php
 $games = [
-    "Naam van game" => [
-        "titel" => "",
-        "genre" => [""],
-        "pegi" => ,
-        "beschrijving" => "",
-        "rating" => ,
-        "trailer" => "",
-        "platform" => [""],
-        "maker" => ""
+    "Aetheria: Eternal Harvest" => [
+        "titel" => "Aetheria: Eternal Harvest",
+        "genre" => ["Farming" , "Adventure"],
+        "pegi" => 7,
+        "beschrijving" => "Een rustgevende simulatie waarin je een vervallen drijvende boerderij erft. Zaai, vis, ontdek mysterieuze luchteilanden en bouw relaties op met de excentrieke, gevleugelde bewoners.",
+        "rating" => 8.7,
+        "trailer" => "https://www.youtube.com/embed/ot7uXNQskhs?si=bxpHnlQSGyksfmwZ",
+        "platform" => ["PC" , "Nintendo Switch" , "Mobile"],
+        "maker" => "Concerned Ape"
     ], 
-    "" => [
-        "titel" => "",
-        "genre" => [""],
-        "pegi" => ,
-        "beschrijving" => "",
-        "rating" => ,
-        "trailer" => "",
-        "platform" => [""],
-        "maker" => ""
+    "Cyber-Duel: Neon-Blood" => [
+        "titel" => "Cyber-Duel: Neon-Blood",
+        "genre" => ["Fighter" , "Actie"],
+        "pegi" => 16,
+        "beschrijving" => "Een snelle, 1-op-1 vechtgame die zich afspeelt in een dystopische, neonverlichte metropool. Kies uit diverse cyborgs en mutanten met unieke, energieke vechtstijlen.",
+        "rating" => 7.8,
+        "trailer" => "https://www.youtube.com/embed/1INU3FOJsTw?si=f0eeym_OK1hQUOf9",
+        "platform" => ["Playstation 5" , "Xbox"],
+        "maker" => "Bandai Namco Studios"
     ]
 ];
 
@@ -90,10 +90,10 @@ $games = [
 $gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : (isset($_GET['leeftijd']) ? (int)$_GET['leeftijd'] : 0);
 $leeftijdIngevuld = isset($_POST['leeftijd']) || isset($_GET['leeftijd']);
 
-$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Plumber's Quest: Galaxy Jumps";
+$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "";
 
 if (!array_key_exists($huidigeTitel, $games)) {
-    $huidigeTitel = "Plumber's Quest: Galaxy Jumps";
+    $huidigeTitel = "";
 }
 
 $geselecteerdeGameData = $games[$huidigeTitel];

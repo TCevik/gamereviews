@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Review PHP 4 (Max) - Game Stars</title>
-    <meta name="author" content="Max">
+    <title>Game Review PHP 4 - Game Stars</title>
+    <meta name="author" content="Tamer Çevik">
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -63,13 +63,14 @@
 <body id="reviewb">
 
 <?php
+// De nieuwe games array
 $games = [
     "Aetheria: Eternal Harvest" => [
         "titel" => "Aetheria: Eternal Harvest",
         "genre" => ["Farming" , "Adventure"],
         "pegi" => 7,
         "beschrijving" => "Een rustgevende simulatie waarin je een vervallen drijvende boerderij erft. Zaai, vis, ontdek mysterieuze luchteilanden en bouw relaties op met de excentrieke, gevleugelde bewoners.",
-        "fotos" => ["images/25.png"], // <--- Hier miste een komma
+        "fotos" => ["images/25.png"],
         "rating" => 8.7,
         "trailer" => "https://www.youtube.com/embed/ot7uXNQskhs?si=bxpHnlQSGyksfmwZ",
         "platform" => ["PC" , "Nintendo Switch" , "Mobile"],
@@ -79,7 +80,7 @@ $games = [
         "titel" => "Cyber-Duel: Neon-Blood",
         "genre" => ["Fighter" , "Actie"],
         "pegi" => 16,
-        "fotos" => ["images/26.png"], // <--- Hier miste de => en een komma
+        "fotos" => ["images/26.png"],
         "beschrijving" => "Een snelle, 1-op-1 vechtgame die zich afspeelt in een dystopische, neonverlichte metropool. Kies uit diverse cyborgs en mutanten met unieke, energieke vechtstijlen.",
         "rating" => 7.8,
         "trailer" => "https://www.youtube.com/embed/1INU3FOJsTw?si=f0eeym_OK1hQUOf9",
@@ -88,12 +89,13 @@ $games = [
     ]
 ];
 
-// Leeftijd check
 $gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : (isset($_GET['leeftijd']) ? (int)$_GET['leeftijd'] : 0);
 $leeftijdIngevuld = isset($_POST['leeftijd']) || isset($_GET['leeftijd']);
 
+// AANGEPAST: Standaard titel is nu Aetheria in plaats van Eldoria
 $huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Aetheria: Eternal Harvest";
 
+// AANGEPAST: Fallback naar Aetheria als de titel niet bestaat
 if (!array_key_exists($huidigeTitel, $games)) {
     $huidigeTitel = "Aetheria: Eternal Harvest";
 }
@@ -145,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
         <?php if (!$leeftijdIngevuld): ?>
         <section class="age-form">
             <h3>Leeftijdscontrole</h3>
-            <form method="POST" action="max-review_php4.php?titel=<?= urlencode($huidigeTitel) ?>">
+            <form method="POST" action="?titel=<?= urlencode($huidigeTitel) ?>">
                 <label for="leeftijd">Voer je leeftijd in:</label>
                 <input type="number" id="leeftijd" name="leeftijd" required min="0" max="120" style="padding: 5px;">
                 <button type="submit" class="btn" style="padding: 5px 10px; font-size: 0.9rem;">Bevestig</button>
@@ -155,8 +157,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
 
         <section class="age-form">
              <p>Kies een game:</p>
-            <a href="?titel=Aetheria%3A+Eternal+Harvestleeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Eternal Harvest</a>
-            <a href="?titel=Cyber-Duel: Neon Blood&leeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Cyber-Duel: Neon Blood</a>
+            <a href="?titel=Aetheria%3A+Eternal+Harvest&leeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Aetheria: Eternal Harvest</a>
+            <a href="?titel=Cyber-Duel%3A+Neon-Blood&leeftijd=<?= $gebruikersLeeftijd ?>" class="btn" style="background-color: #333; font-size: 0.8rem;">Cyber-Duel: Neon-Blood</a>
         </section>
 
         <?php if ($leeftijdIngevuld): ?>

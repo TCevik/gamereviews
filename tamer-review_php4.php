@@ -69,6 +69,7 @@ $games = [
         "genre" => ["Open-world"],
         "pegi" => 12,
         "beschrijving" => "en uitgestrekte fantasy RPG waarin je een 'Waker' bent, een monsterjager die door een land vol politieke intriges en oude magie reist om een opkomende duisternis te stoppen.",
+        "fotos" => ["images/27.png"]
         "rating" => 6.7,
         "trailer" => "https://www.youtube.com/embed/yWMu6JeT2g8?si=jEcoVfMCEmnhq5lp",
         "platform" => ["PS5" , "Xbox" , "PC"],
@@ -79,6 +80,7 @@ $games = [
         "genre" => ["Actie"],
         "pegi" => 12,
         "beschrijving" => "Een online multiplayer game voor 8 spelers, vastzittend in een constant veranderende, dodelijke doolhof. Werk samen om te ontsnappen, maar pas op: twee spelers zijn 'Saboteurs' wiens enige doel het is om de rest uit te schakelen.",
+        "fotos" ["images/28.png"]
         "rating" => 7.1,
         "trailer" => "https://www.youtube.com/embed/9pyYq9lpjls?si=unB7qQ6FSacmNUvL",
         "platform" => ["PC" , "Xbox" , "PS5" , "Mobile"],

@@ -77,8 +77,8 @@ $games = [
         "beschrijving" => "Een snelle 2D-platformer met power-ups, verborgen levels en een focus op precisie-springen en het verslaan van een schildpad-achtige aartsvijand in een kleurrijke wereld.",
         "rating" => 8.1,
         "trailer" => "https://www.youtube.com/embed/XvQNlGKNC6o?si=gpu9n0lZZZAF_ec2",
-        "platform" => ["nintendo switch"],
-        "maker" => "nintendo"
+        "platform" => ["Nintendo Switch"],
+        "maker" => "Nintendo"
     ], 
     "Blocktopia" => [
         "titel" => "Blocktopia",
@@ -88,7 +88,7 @@ $games = [
         "beschrijving" => "Een open-wereld sandbox spel met procedureel gegenereerde landschappen. Het combineert crafting en overleving, maar voegt magische elementen en complexe machines toe.",
         "rating" => 8.9,
         "trailer" => "https://www.youtube.com/embed/MmB9b5njVbA?si=RXqXuu7QRp6CQcXk",
-        "platform" => ["PC", "Xbox", "Playstation 5", "nintendo"],
+        "platform" => ["PC", "Xbox", "Playstation 5", "Nintendo"],
         "maker" => "Mojang studios"
     ]
 ];

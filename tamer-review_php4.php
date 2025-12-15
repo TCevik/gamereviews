@@ -89,10 +89,10 @@ $games = [
 $gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : (isset($_GET['leeftijd']) ? (int)$_GET['leeftijd'] : 0);
 $leeftijdIngevuld = isset($_POST['leeftijd']) || isset($_GET['leeftijd']);
 
-$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Life weaver";
+$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "The Chronicles of Eldoria: Shadowfall";
 
 if (!array_key_exists($huidigeTitel, $games)) {
-    $huidigeTitel = "Life weaver";
+    $huidigeTitel = "The Chronicles of Eldoria: Shadowfall";
 }
 
 $geselecteerdeGameData = $games[$huidigeTitel];

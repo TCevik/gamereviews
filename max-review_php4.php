@@ -90,10 +90,10 @@ $games = [
 $gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : (isset($_GET['leeftijd']) ? (int)$_GET['leeftijd'] : 0);
 $leeftijdIngevuld = isset($_POST['leeftijd']) || isset($_GET['leeftijd']);
 
-$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "";
+$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Aetheria: Eternal Harvest";
 
 if (!array_key_exists($huidigeTitel, $games)) {
-    $huidigeTitel = "";
+    $huidigeTitel = "Aetheria: Eternal Harvest";
 }
 
 $geselecteerdeGameData = $games[$huidigeTitel];

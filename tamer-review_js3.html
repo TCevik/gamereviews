@@ -307,6 +307,9 @@
                 // Start de slideshow op de eerste slide
                 slideIndex = 1;
                 showSlides(slideIndex);
+                setInterval(() => {
+                    plusSlides(1)
+                }, 5000);
 
             } else {
                 resultaatGebied.innerHTML = `

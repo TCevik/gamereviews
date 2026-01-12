@@ -252,19 +252,19 @@
                 let slidesHTML = "";
                 gekozenGame.fotos.forEach(foto => {
                     slidesHTML += `
-                        <div class="mySlides fade">
+                        <article class="mySlides fade">
                             <img src="${foto}" alt="${gekozenGame.titel}">
-                        </div>
+                        </article>
                     `;
                 });
 
                 // Voeg navigatie knoppen toe aan slideshow HTML
                 let slideshowHTML = `
-                    <div class="slideshow-container">
+                    <article class="slideshow-container">
                         ${slidesHTML}
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
+                    </article>
                 `;
 
                 let platformHTML = "";
@@ -276,17 +276,17 @@
                     <h1 class="page-title">Review: ${gekozenGame.titel}</h1>
                     <article class="card" id="review" style="max-width: 800px; margin: 0 auto; padding: 20px;">
                         
-                        <div style="margin-bottom: 15px;">
+                        <article style="margin-bottom: 15px;">
                             ${genresHTML}
-                        </div>
+                        </article>
 
                         ${slideshowHTML}
 
                         <article class="card-content">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <article style="display:flex; justify-content:space-between; align-items:center;">
                                 <h3>Score: ${gekozenGame.rating}/10</h3>
                                 <span style="font-size: 0.9em; color: #555;">Maker: ${gekozenGame.maker}</span>
-                            </div>
+                            </article>
                             
                             <p>${gekozenGame.beschrijving}</p>
 
@@ -296,9 +296,9 @@
                                 <p><strong>Platforms:</strong> ${platformHTML}</p>
                             </article>
 
-                            <div class="video-wrapper">
+                            <article class="video-wrapper">
                                 <iframe src="${gekozenGame.trailer}" frameborder="0" allowfullscreen></iframe>
-                            </div>
+                            </article>
                         </article>
                     </article>
                 `;
@@ -310,12 +310,12 @@
 
             } else {
                 resultaatGebied.innerHTML = `
-                    <div class="error-box">
+                    <article class="error-box">
                         <h3>Toegang Geweigerd</h3>
                         <p>Je bent ${leeftijd} jaar oud.</p>
                         <p>De game <strong>${gekozenGame.titel}</strong> heeft een PEGI-leeftijd van <strong>${gekozenGame.pegi}+</strong>.</p>
                         <p>Je bent helaas te jong om deze review te bekijken.</p>
-                    </div>
+                    </article>
                 `;
             }
         }

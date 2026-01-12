@@ -153,19 +153,19 @@ switch ($huidigeTitel) {
 
                 <article class="card" id="review" style="max-width: 800px; margin: 0 auto; padding: 20px;">
                     
-                    <div style="margin-bottom: 10px;">
+                    <article style="margin-bottom: 10px;">
                         <?php foreach($geselecteerdeGameData['genre'] as $g): ?>
                             <span class="badge" style="background-color: var(--brand-green);"><?= $g ?></span>
                         <?php endforeach; ?>
-                    </div>
+                    </article>
 
-                    <div class="gallery">
+                    <article class="gallery">
                         <?php foreach($geselecteerdeGameData['fotos'] as $foto): ?>
                             <img src="<?= $foto ?>" alt="Game screenshot">
                         <?php endforeach; ?>
-                    </div>
+                    </article>
 
-                    <div class="card-content">
+                    <article class="card-content">
                         <h3>Rating: <?= "{$geselecteerdeGameData['rating']}" ?>/10</h3>
                         <p><strong>Maker:</strong> <?= "{$geselecteerdeGameData['maker']}" ?></p>
                         <p><?= "{$geselecteerdeGameData['beschrijving']}" ?></p>
@@ -184,20 +184,20 @@ switch ($huidigeTitel) {
                         </article>
 
                         <?php if(!empty($geselecteerdeGameData['trailer'])): ?>
-                            <div class="video-container">
+                            <article class="video-container">
                                 <iframe src="<?= $geselecteerdeGameData['trailer'] ?>" frameborder="0" allowfullscreen></iframe>
-                            </div>
+                            </article>
                         <?php endif; ?>
 
-                    </div>
+                    </article>
                 </article>
 
             <?php else: ?>
-                <div class="error-msg">
+                <article class="error-msg">
                     <h2>Helaas!</h2>
                     <p>Je bent <?= $gebruikersLeeftijd ?> jaar oud.</p>
                     <p>Deze game heeft een PEGI-rating van <?= $geselecteerdeGameData['pegi'] ?>+. Je bent niet oud genoeg om deze content te bekijken.</p>
-                </div>
+                </article>
                 <h1 style="text-align:center; color: #666; filter: blur(2px);">Review: <?= $geselecteerdeGameData['titel'] ?></h1>
             <?php endif; ?>
 

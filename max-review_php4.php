@@ -169,14 +169,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
 
                 <article class="card" id="review" style="max-width: 800px; margin: 0 auto; padding: 20px;">
                     
-                    <div style="margin-bottom: 10px;">
+                    <article style="margin-bottom: 10px;">
                         <?php foreach($geselecteerdeGameData['genre'] as $g): ?>
                             <span class="badge" style="background-color: var(--brand-green);"><?= $g ?></span>
                         <?php endforeach; ?>
-                    </div>
+                    </article>
 
 
-                    <div class="card-content">
+                    <article class="card-content">
                         <h3>Huidige Rating: <?= number_format($nieuweRating, 1) ?>/10</h3>
                         <p><strong>Maker:</strong> <?= "{$geselecteerdeGameData['maker']}" ?></p>
                         <p><?= "{$geselecteerdeGameData['beschrijving']}" ?></p>
@@ -192,12 +192,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
                         </article>
 
                         <?php if(!empty($geselecteerdeGameData['trailer'])): ?>
-                            <div class="video-container">
+                            <article class="video-container">
                                 <iframe src="<?= $geselecteerdeGameData['trailer'] ?>" frameborder="0" allowfullscreen></iframe>
-                            </div>
+                            </article>
                         <?php endif; ?>
 
-                        <div style="margin-top: 30px;">
+                        <article style="margin-top: 30px;">
                             <h3>Schrijf een review</h3>
                             <form method="POST" class="review-form">
                                 <input type="hidden" name="hidden_leeftijd" value="<?= $gebruikersLeeftijd ?>">
@@ -209,36 +209,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
                                 <textarea id="beschrijving" name="beschrijving" rows="4" required placeholder="Wat vond je van de game?"></textarea>
 
                                 <label>Rating (1-5):</label>
-                                <div style="margin-bottom: 15px;">
+                                <article style="margin-bottom: 15px;">
                                     <input type="radio" id="r1" name="rating" value="1" required> <label for="r1" style="display:inline; font-weight:normal;">1</label>
                                     <input type="radio" id="r2" name="rating" value="2"> <label for="r2" style="display:inline; font-weight:normal;">2</label>
                                     <input type="radio" id="r3" name="rating" value="3"> <label for="r3" style="display:inline; font-weight:normal;">3</label>
                                     <input type="radio" id="r4" name="rating" value="4"> <label for="r4" style="display:inline; font-weight:normal;">4</label>
                                     <input type="radio" id="r5" name="rating" value="5"> <label for="r5" style="display:inline; font-weight:normal;">5</label>
-                                </div>
+                                </article>
 
                                 <button type="submit" name="submit_review" class="btn">Verstuur Review</button>
                             </form>
-                        </div>
+                        </article>
 
                         <?php if ($reviewIngezonden): ?>
-                            <div class="user-review">
+                            <article class="user-review">
                                 <h4>Bedankt voor je review, <?= $userReviewData['naam'] ?>!</h4>
                                 <p><strong>Jouw Score:</strong> <?= $userReviewData['rating'] ?>/5</p>
                                 <p><em>"<?= $userReviewData['beschrijving'] ?>"</em></p>
                                 <p style="color: var(--dark-green-text); font-weight: bold;">De nieuwe gemiddelde score van de game is nu: <?= number_format($nieuweRating, 1) ?>/10</p>
-                            </div>
+                            </article>
                         <?php endif; ?>
 
-                    </div>
+                    </article>
                 </article>
 
             <?php else: ?>
-                <div class="error-msg">
+                <article class="error-msg">
                     <h2>Helaas!</h2>
                     <p>Je bent <?= $gebruikersLeeftijd ?> jaar oud.</p>
                     <p>Deze game heeft een PEGI-rating van <?= $geselecteerdeGameData['pegi'] ?>+. Je bent niet oud genoeg om deze content te bekijken.</p>
-                </div>
+                </article>
             <?php endif; ?>
 
         <?php endif; ?>

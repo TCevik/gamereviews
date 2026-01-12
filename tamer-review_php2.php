@@ -75,10 +75,10 @@
 
         <article class="card" id="review" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto; padding: 20px;">
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+            <article style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
                 <img src="<?= $geselecteerdeGame['cover'] ?>" alt="Cover" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
                 <img src="<?= $geselecteerdeGame['screenshot'] ?>" alt="Screenshot" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; filter: grayscale(30%);">
-            </div>
+            </article>
             
             <article class="card-content">
                 <article style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">

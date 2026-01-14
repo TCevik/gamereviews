@@ -167,11 +167,7 @@
         <section class="slideshow-container">
             
             <?php 
-<<<<<<< HEAD
-            
             foreach($latestReviews as $index => $review): 
-               
-=======
             foreach($latestReviews as $index => $review): 
 
                 $pegiClass = ($review['pegi'] >= 16) ? 'red' : 'green';
@@ -235,7 +231,6 @@
     <script>
         const slides = document.querySelectorAll('.review-slide');
         let currentSlide = 0;
-<<<<<<< HEAD
         const slideIntervalTime = 8000; 
 
         function nextSlide() {
@@ -250,25 +245,16 @@
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
             slides[currentSlide].style.display = 'none';
-
->>>>>>> 609cf99b3b91be88b4ee14567e7e60869ef3734f
             currentSlide = (currentSlide + 1) % slides.length;
 
             slides[currentSlide].style.display = 'block';
             
-<<<<<<< HEAD
-           
-=======
->>>>>>> 609cf99b3b91be88b4ee14567e7e60869ef3734f
             setTimeout(() => {
                 slides[currentSlide].classList.add('active');
             }, 10);
         }
 
-<<<<<<< HEAD
        
-=======
->>>>>>> 609cf99b3b91be88b4ee14567e7e60869ef3734f
         setInterval(nextSlide, slideIntervalTime);
 
         console.log("Slideshow gestart met " + slides.length + " reviews.");

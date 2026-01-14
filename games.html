@@ -315,7 +315,6 @@
     </footer>
 
     <script>
-        // Bestaande functies en variabelen behouden
         function pasFooterAan() {
             const footer = document.querySelector('footer');
             const windowHoogte = window.innerHeight;
@@ -338,23 +337,18 @@
         const platformSelect = document.getElementById('platform');
         const alleKaarten = document.querySelectorAll('.card');
         const paginatieLinks = document.querySelectorAll('.page-link');
-        let huidigePagina = 1; // Start op de eerste pagina
+        let huidigePagina = 1;
 
-        // Functie voor paginering
         function toonPagina(paginaNummer) {
             huidigePagina = paginaNummer;
-            // Verwijder 'active' klasse van alle links
             paginatieLinks.forEach(link => {
                 link.classList.remove('active');
             });
-            // Voeg 'active' klasse toe aan de geselecteerde link
             document.querySelector(`.page-link[data-page="${paginaNummer}"]`).classList.add('active');
 
-            // Roep de filterfunctie aan om de kaarten te tonen/verbergen
             filterGames();
         }
 
-        // Functie voor games filteren EN pagineren
         function filterGames() {
             const zoekTekst = zoekVeld.value.toLowerCase();
             const gekozenGenre = genreSelect.value.toLowerCase();
@@ -363,23 +357,17 @@
             alleKaarten.forEach(kaart => {
                 const kaartPagina = parseInt(kaart.getAttribute('data-page'));
                 const titel = kaart.querySelector('h3').innerText.toLowerCase();
-                // Haal de genre- en platforminformatie op uit de data-attributen voor nauwkeuriger filteren
                 const kaartGenres = kaart.getAttribute('data-genre').toLowerCase();
                 const kaartPlatforms = kaart.getAttribute('data-platform').toLowerCase();
 
-                // Controleer of de kaart op de huidige pagina staat
                 const matchPagina = kaartPagina === huidigePagina;
 
-                // Bestaande filterlogica
                 const matchZoek = titel.includes(zoekTekst);
-                // Controleer of de gekozen genre (of 'alle') in de genres van de kaart voorkomt
                 const matchGenre = gekozenGenre === 'alle' || kaartGenres.includes(gekozenGenre);
-                // Controleer of het gekozen platform (of 'alle') in de platforms van de kaart voorkomt
                 const matchPlatform = gekozenPlatform === 'alle' || kaartPlatforms.includes(gekozenPlatform);
 
-                // Toon de kaart als deze op de huidige pagina staat EN aan de filters voldoet
                 if (matchPagina && matchZoek && matchGenre && matchPlatform) {
-                    kaart.style.display = 'block'; // Gebruik 'block' voor grid layout
+                    kaart.style.display = 'block';
                 } else {
                     kaart.style.display = 'none';
                 }
@@ -388,23 +376,20 @@
             pasFooterAan();
         }
 
-        // Event listeners voor filters
         zoekVeld.addEventListener('keyup', filterGames);
         genreSelect.addEventListener('change', filterGames);
         platformSelect.addEventListener('change', filterGames);
 
-        // Event listeners voor paginatie
         paginatieLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault(); // Voorkom dat de pagina herlaadt
+                e.preventDefault();
                 const pagina = parseInt(e.target.getAttribute('data-page'));
                 toonPagina(pagina);
             });
         });
 
-        // Roep toonPagina aan bij het laden om alleen pagina 1 te tonen
         document.addEventListener('DOMContentLoaded', () => {
-            toonPagina(huidigePagina); // Toon de standaardpagina (1)
+            toonPagina(huidigePagina);
         });
 
     </script>

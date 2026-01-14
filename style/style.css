@@ -191,6 +191,25 @@ footer {
     margin-bottom: 1.25rem;
 }
 
+.slideshow {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin: auto;
+}
+ 
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    
+}
+ 
+.slide.active {
+    opacity: 1;
+}
+
 .hero {
     background-image: url(../images/achtergrond.gif);
     background-size: cover;

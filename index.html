@@ -43,34 +43,19 @@
         <section class="container">
             <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2.5rem;">Uitgelichte Reviews</h2>
 
-            <article class="grid-3">
-                <article class="card">
-                    <img src="/images/best-rpgs-header-2022.webp" alt="">
-                    <article class="card-content">
-                        <h3>Spannende RPG Avontuur</h3>
-                        <p>Een diepe duik in de wereld van 'Eldoria Chronicles', een must-play voor elke RPG-liefhebber.
-                        </p>
-                    </article>
-                </article>
+        
+    
+              <section class="slideshow">
+        <img src="images/26.png" class="slide active">
+        <img src="images/27.png" class="slide">
+        <img src="images/28.png" class="slide">
+        <
+    </section>
 
-                <article class="card">
-                    <img src="images/0193493_top-strategy-titans-the-best-selling-strategy-games-of-2023.webp" alt="">
-                    <article class="card-content">
-                        <h3>Strategie Meesterwerk</h3>
-                        <p>Analyse van 'Civ-Builder V', de nieuwe koning van het strategiegenre.</p>
-                    </article>
-                </article>
-
-                <article class="card">
-                    <img src="images/025NJmKivEPIxXC9veZnSFP-6.webp" alt="">
-                    <article class="card-content">
-                        <h3>Indie Pareltje</h3>
-                        <p>'Echo Grove' is een verrassend en hartverwarmend avontuur dat je niet mag missen.</p>
-                    </article>
-                </article>
-            </article>
-        </section>
-
+      
+        
+    </section>
+              
     </main>
 
     <footer>
@@ -80,6 +65,28 @@
     </footer>
 
     <script>
+       
+const slides = document.querySelectorAll('.slide');
+
+let currentSlide = 0;
+ 
+slides[currentSlide].classList.add('active');
+ 
+function goToNextSlide() {
+   
+    slides[currentSlide].classList.remove('active');
+   
+    if (currentSlide === slides.length - 1) {
+        currentSlide = 0;
+    } else {
+        currentSlide = currentSlide + 1;
+       
+    } 
+    slides[currentSlide].classList.add('active');
+}
+ 
+setInterval(goToNextSlide, 4000);
+
         function pasFooterAan() {
             const footer = document.querySelector('footer');
             const windowHoogte = window.innerHeight;

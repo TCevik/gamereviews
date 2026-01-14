@@ -169,12 +169,9 @@
         <section class="slideshow-container">
             
             <?php 
-            // PHP LOOP: Hier itereren we door de array om de slides te genereren.
-            // Volgens de opdracht moeten we 4 reviews tonen.
-            // We gebruiken een loop om alle reviews netjes in HTML te zetten.
             
             foreach($latestReviews as $index => $review): 
-                // Bepaal kleur van PEGI badge
+               
                 $pegiClass = ($review['pegi'] >= 16) ? 'red' : 'green';
             ?>
 
@@ -238,27 +235,25 @@
         // Selecteer alle slides
         const slides = document.querySelectorAll('.review-slide');
         let currentSlide = 0;
-        const slideIntervalTime = 8000; // Tijd per slide in ms (8 seconden om te lezen)
+        const slideIntervalTime = 8000; 
 
         function nextSlide() {
-            // Verberg huidige slide
+          
             slides[currentSlide].classList.remove('active');
             slides[currentSlide].style.display = 'none';
 
-            // Bereken volgende slide index
+         
             currentSlide = (currentSlide + 1) % slides.length;
 
-            // Toon volgende slide
             slides[currentSlide].style.display = 'block';
             
-            // Kleine vertraging voor de class toevoeging zorgt soms voor soepeler animatie, 
-            // maar hier doen we het direct voor de 'display: block' werking.
+           
             setTimeout(() => {
                 slides[currentSlide].classList.add('active');
             }, 10);
         }
 
-        // Start de automatische slideshow
+       
         setInterval(nextSlide, slideIntervalTime);
 
         console.log("Slideshow gestart met " + slides.length + " reviews.");

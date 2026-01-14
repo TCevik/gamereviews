@@ -42,7 +42,8 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box; /* Zorgt ervoor dat padding binnen de breedte valt */
+            box-sizing: border-box;
+            /* Zorgt ervoor dat padding binnen de breedte valt */
         }
 
         textarea {
@@ -58,7 +59,7 @@
             cursor: pointer;
             font-size: 16px;
         }
-        
+
         @media (max-width: 768px) {
             .contact-wrapper {
                 flex-direction: column;
@@ -143,12 +144,19 @@
     </footer>
 
     <script>
-        const WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1444967219732680794/1CFTOCDKW9ywhuz-hobwtvt9eHGf9eFElhwTTarZjjQJPKgZATPkreDVyaO6bobVqANW'; 
+        // Tip: Houd er rekening mee dat deze URL openbaar zichtbaar is in de browser
+        const WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1444967219732680794/1CFTOCDKW9ywhuz-hobwtvt9eHGf9eFElhwTTarZjjQJPKgZATPkreDVyaO6bobVqANW';
 
         const contactForm = document.querySelector('.contact-form');
-        
-        contactForm.addEventListener('submit', async function(event) {
+
+        contactForm.addEventListener('submit', async function (event) {
             event.preventDefault();
+
+            // Pak de knop op om deze tijdelijk uit te schakelen (voorkomt dubbel klikken)
+            const submitBtn = contactForm.querySelector('.btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Verzenden...';
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
@@ -160,50 +168,40 @@
                     title: subject,
                     color: 5814783,
                     fields: [
-                        {
-                            name: "👤 Naam",
-                            value: name,
-                            inline: true
-                        },
-                        {
-                            name: "📧 E-mail",
-                            value: email,
-                            inline: true
-                        },
-                        {
-                            name: "💬 Bericht",
-                            value: message.substring(0, 1024),
-                            inline: false
-                        }
+                        { name: "👤 Naam", value: name, inline: true },
+                        { name: "📧 E-mail", value: email, inline: true },
+                        { name: "💬 Bericht", value: message.substring(0, 1024), inline: false }
                     ],
-                    timestamp: new Date().toISOString(), 
-                    footer: {
-                        text: "Game Stars Contact"
-                    }
+                    timestamp: new Date().toISOString(),
+                    footer: { text: "Game Stars Contact" }
                 }]
             };
 
             try {
                 const response = await fetch(WEBHOOK_URL, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(discordPayload),
                 });
 
                 if (response.ok) {
                     alert('Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.');
                     contactForm.reset();
-                } else                     console.error('Fout bij versturen naar Discord:', response.status, response.statusText); 
-                    alert('Er is een fout opgetreden bij het verzenden van het bericht. Probeer het later opnieuw.');
+                } else {
+                    // Nu staat de foutmelding netjes in het else-blok
+                    console.error('Fout bij versturen naar Discord:', response.status);
+                    alert('Er is een fout opgetreden bij het verzenden. Status: ' + response.status);
                 }
             } catch (error) {
                 console.error('Netwerkfout:', error);
                 alert('Er is een netwerkfout opgetreden. Controleer je verbinding.');
+            } finally {
+                // Zet de knop altijd weer terug
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Verstuur Knop';
             }
         });
     </script>
-    </body>
+</body>
 
 </html>

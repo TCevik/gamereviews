@@ -101,9 +101,9 @@
 
             console.log(`Huidige game geladen: ${game.titel} (PEGI ${game.pegi})`);
 
-            const contentDiv = document.getElementById('game-content');
+            const contentArticle = document.getElementById('game-content');
 
-            contentDiv.innerHTML = `
+            contentArticle.innerHTML = `
                 <h1 class="page-title" id="reviewt">Review: ${game.titel}</h1>
                 
                 <article class="card" id="review" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto; padding: 20px;">

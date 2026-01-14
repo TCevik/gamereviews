@@ -195,8 +195,7 @@
                 if (response.ok) {
                     alert('Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.');
                     contactForm.reset();
-                } else {
-                    console.error('Fout bij versturen naar Discord:', response.status, response.statusText); 
+                } else                     console.error('Fout bij versturen naar Discord:', response.status, response.statusText); 
                     alert('Er is een fout opgetreden bij het verzenden van het bericht. Probeer het later opnieuw.');
                 }
             } catch (error) {

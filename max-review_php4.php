@@ -82,7 +82,7 @@ $games = [
         "pegi" => 16,
         "fotos" => ["images/26.png"],
         "fotos" => ["images/26.png"], 
-        "beschrijving" => "Een snelle, 1-op-1 vechtgame die zich afspeelt in een dystopische, neonverlichte metropool. Kies uit diverse cyborgs en mutanten met unieke, energieke vechtstijlen.",
+        "beschrijving" => "Een snelle, 1-op-1 vechtgame die zich afspeelt in een dystopische, neonverlichte metropool. Kies uit verschillende cyborgs en mutanten met unieke, energieke vechtstijlen.",
         "rating" => 7.8,
         "trailer" => "https://www.youtube.com/embed/1INU3FOJsTw?si=f0eeym_OK1hQUOf9",
         "platform" => ["Playstation 5" , "Xbox"],

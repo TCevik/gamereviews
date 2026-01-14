@@ -239,7 +239,7 @@
             slides[currentSlide].style.display = 'none';
 
          
-        const slideIntervalTime = 8000;
+         const slideIntervalTime = 8000;
 
         function nextSlide() {
             slides[currentSlide].classList.remove('active');

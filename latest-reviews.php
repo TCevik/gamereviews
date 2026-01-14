@@ -78,18 +78,16 @@
 <body>
 
     <?php
-    // DEEL B: Multidimensionale Associatieve Array met 4 reviews
-    // Eis: 3x PEGI 16+ en 1x PEGI <16
     $latestReviews = [
         [
             "titel" => "Cyberzone 2077: Phantom",
             "genre" => ["Actie", "RPG"],
             "pegi" => 18,
             "beschrijving" => "Een duister toekomstbeeld waarin je vecht om te overleven in een stad vol technologie en gevaar. De graphics zijn verbluffend en het verhaal grijpt je bij de keel.",
-            "rating" => 9.2, // Game rating
+            "rating" => 9.2
             "platform" => ["PC", "PS5", "Xbox Series X"],
             "maker" => "CD Projekt Red",
-            "trailer" => "https://www.youtube.com/embed/8X2kIfS6fb8", // Cyberpunk trailer link voorbeeld
+            "trailer" => "https://www.youtube.com/embed/8X2kIfS6fb8",
             "user_reviews" => [
                 ["naam" => "Kevin", "tekst" => "Geweldige sfeer, maar nog wel wat bugs.", "rating" => 4],
                 ["naam" => "Sarah", "tekst" => "Het beste verhaal dat ik dit jaar heb gespeeld.", "rating" => 5],
@@ -104,7 +102,7 @@
             "rating" => 8.5,
             "platform" => ["PC", "PS5"],
             "maker" => "Undead Labs",
-            "trailer" => "https://www.youtube.com/embed/qJc6j5_JzFw", // Dying Light 2 voorbeeld
+            "trailer" => "https://www.youtube.com/embed/qJc6j5_JzFw"
             "user_reviews" => [
                 ["naam" => "Ali", "tekst" => "Doodeng, precies wat ik zocht!", "rating" => 5],
                 ["naam" => "Lisa", "tekst" => "Iets te moeilijk naar mijn smaak.", "rating" => 3],
@@ -119,7 +117,7 @@
             "rating" => 8.8,
             "platform" => ["PC", "Xbox", "PS5"],
             "maker" => "Hangar 13",
-            "trailer" => "https://www.youtube.com/embed/_MKW29N8N44", // Mafia voorbeeld
+            "trailer" => "https://www.youtube.com/embed/_MKW29N8N44",
             "user_reviews" => [
                 ["naam" => "Mehmet", "tekst" => "Klassieker in wording.", "rating" => 5],
                 ["naam" => "Sophie", "tekst" => "De auto's besturen wat zwaar, verder top.", "rating" => 4],
@@ -129,12 +127,12 @@
         [
             "titel" => "Super Kart Racers",
             "genre" => ["Racing", "Familie"],
-            "pegi" => 3, // De game voor jongeren (onder 16)
+            "pegi" => 3,
             "beschrijving" => "Scheur door kleurrijke banen met je favoriete karakters! Plezier voor het hele gezin met gekke power-ups en snelle karts.",
             "rating" => 7.9,
             "platform" => ["Switch", "Mobile"],
             "maker" => "Nintendo",
-            "trailer" => "https://www.youtube.com/embed/tKlRN2YpxRE", // Mario Kart voorbeeld
+            "trailer" => "https://www.youtube.com/embed/tKlRN2YpxRE",
             "user_reviews" => [
                 ["naam" => "Sem (8 jaar)", "tekst" => "Super leuk!", "rating" => 5],
                 ["naam" => "Mama van Sem", "tekst" => "Leuk om samen te spelen.", "rating" => 4],
@@ -169,9 +167,13 @@
         <section class="slideshow-container">
             
             <?php 
+<<<<<<< HEAD
             
             foreach($latestReviews as $index => $review): 
                
+=======
+            foreach($latestReviews as $index => $review): 
+
                 $pegiClass = ($review['pegi'] >= 16) ? 'red' : 'green';
             ?>
 
@@ -204,7 +206,6 @@
                             <h4>Wat zeggen spelers?</h4>
                             <article class="user-reviews-grid">
                                 <?php 
-                                // Nested loop voor de user reviews
                                 foreach($review['user_reviews'] as $userRev): 
                                 ?>
                                     <article class="user-review-box">
@@ -232,9 +233,9 @@
     </footer>
 
     <script>
-        // Selecteer alle slides
         const slides = document.querySelectorAll('.review-slide');
         let currentSlide = 0;
+<<<<<<< HEAD
         const slideIntervalTime = 8000; 
 
         function nextSlide() {
@@ -243,17 +244,31 @@
             slides[currentSlide].style.display = 'none';
 
          
+=======
+        const slideIntervalTime = 8000;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].style.display = 'none';
+
+>>>>>>> 609cf99b3b91be88b4ee14567e7e60869ef3734f
             currentSlide = (currentSlide + 1) % slides.length;
 
             slides[currentSlide].style.display = 'block';
             
+<<<<<<< HEAD
            
+=======
+>>>>>>> 609cf99b3b91be88b4ee14567e7e60869ef3734f
             setTimeout(() => {
                 slides[currentSlide].classList.add('active');
             }, 10);
         }
 
+<<<<<<< HEAD
        
+=======
+>>>>>>> 609cf99b3b91be88b4ee14567e7e60869ef3734f
         setInterval(nextSlide, slideIntervalTime);
 
         console.log("Slideshow gestart met " + slides.length + " reviews.");

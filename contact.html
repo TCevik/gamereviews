@@ -143,26 +143,22 @@
     </footer>
 
     <script>
-        // ** BELANGRIJK: Vervang dit door je Discord Webhook URL **
         const WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1444967219732680794/1CFTOCDKW9ywhuz-hobwtvt9eHGf9eFElhwTTarZjjQJPKgZATPkreDVyaO6bobVqANW'; 
 
         const contactForm = document.querySelector('.contact-form');
         
-        // Voeg een 'event listener' toe die reageert op het versturen van het formulier
         contactForm.addEventListener('submit', async function(event) {
-            event.preventDefault(); // Voorkom de standaard formulierinzending (pagina herladen)
-
+            event.preventDefault();
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Maak de payload (JSON-object) die naar Discord wordt gestuurd
             const discordPayload = {
                 content: "✨ **Nieuw Contactformulier Inzending** ✨",
                 embeds: [{
                     title: subject,
-                    color: 5814783, // Een mooie blauw/groene Discord kleur
+                    color: 5814783,
                     fields: [
                         {
                             name: "👤 Naam",
@@ -176,11 +172,10 @@
                         },
                         {
                             name: "💬 Bericht",
-                            value: message.substring(0, 1024), // Limiteer tot 1024 karakters voor Discord
+                            value: message.substring(0, 1024),
                             inline: false
                         }
                     ],
-                    // Voeg een tijdstempel toe
                     timestamp: new Date().toISOString(), 
                     footer: {
                         text: "Game Stars Contact"
@@ -189,7 +184,6 @@
             };
 
             try {
-                // Stuur het POST-verzoek naar de Discord Webhook met de fetch API
                 const response = await fetch(WEBHOOK_URL, {
                     method: 'POST',
                     headers: {
@@ -200,9 +194,8 @@
 
                 if (response.ok) {
                     alert('Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.');
-                    contactForm.reset(); // Maak het formulier leeg
+                    contactForm.reset();
                 } else {
-                    // Log de fout voor debuggen
                     console.error('Fout bij versturen naar Discord:', response.status, response.statusText); 
                     alert('Er is een fout opgetreden bij het verzenden van het bericht. Probeer het later opnieuw.');
                 }

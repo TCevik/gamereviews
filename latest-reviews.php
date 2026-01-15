@@ -84,7 +84,7 @@
             "genre" => ["Actie", "RPG"],
             "pegi" => 18,
             "beschrijving" => "Een duister toekomstbeeld waarin je vecht om te overleven in een stad vol technologie en gevaar. De graphics zijn verbluffend en het verhaal grijpt je bij de keel.",
-            "rating" => 9.2
+            "rating" => 9.2,
             "platform" => ["PC", "PS5", "Xbox Series X"],
             "maker" => "CD Projekt Red",
             "trailer" => "https://www.youtube.com/embed/8X2kIfS6fb8",

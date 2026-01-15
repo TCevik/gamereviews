@@ -6,34 +6,34 @@
     <title>Latest Reviews - Game Stars</title>
     <meta name="author" content="Tamer Çevik">
     <link rel="stylesheet" href="style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https:
+    .fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Specifieke stijlen voor de slideshow die niet in style.css staan */
         .slideshow-container {
             position: relative;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 40px auto;
             overflow: hidden;
-            min-height: 800px; /* Zorgt dat de footer niet verspringt */
+            min-height: 850px;
         }
 
         .review-slide {
-            display: none; /* Verbergt standaard alle slides */
-            animation: fadeEffect 1s; /* Fade effect */
+            display: none;
+            animation: fadeEffect 1s; 
         }
 
         .review-slide.active {
-            display: block; /* Toont de actieve slide */
+            display: block;
         }
 
-        /* Video responsive maken */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             margin-top: 20px;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .video-container iframe {
@@ -46,31 +46,32 @@
 
         .user-reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
 
         .user-review-box {
-            background-color: var(--light-green-bg);
-            padding: 10px;
+            background-color: #f9f9f9;
+            padding: 15px;
             border-radius: 8px;
             font-size: 0.9rem;
+            border-left: 4px solid var(--brand-green, #2ecc71);
         }
 
         .badge-pegi {
             background-color: #333;
             color: white;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 5px;
             font-weight: bold;
         }
         
-        .badge-pegi.red { background-color: #e74c3c; } /* Voor 16+ en 18+ */
-        .badge-pegi.green { background-color: #2ecc71; } /* Voor jonger */
+        .badge-pegi.red { background-color: #e74c3c; }
+        .badge-pegi.green { background-color: #2ecc71; }
 
         @keyframes fadeEffect {
-            from {opacity: 0.4}
+            from {opacity: 0.2}
             to {opacity: 1}
         }
     </style>
@@ -102,7 +103,7 @@
             "rating" => 8.5,
             "platform" => ["PC", "PS5"],
             "maker" => "Undead Labs",
-            "trailer" => "https://www.youtube.com/embed/qJc6j5_JzFw"
+            "trailer" => "https://www.youtube.com/embed/qJc6j5_JzFw",
             "user_reviews" => [
                 ["naam" => "Ali", "tekst" => "Doodeng, precies wat ik zocht!", "rating" => 5],
                 ["naam" => "Lisa", "tekst" => "Iets te moeilijk naar mijn smaak.", "rating" => 3],
@@ -128,7 +129,7 @@
             "titel" => "Super Kart Racers",
             "genre" => ["Racing", "Familie"],
             "pegi" => 3,
-            "beschrijving" => "Scheur door kleurrijke banen met je favoriete karakters! Plezier voor het hele gezin met gekke power-ups en snelle karts.",
+            "beschrijving" => "Scheur door kleurrijke banen met je favoriete karakters! Plezier voor het hele gezin met gekke power-ups.",
             "rating" => 7.9,
             "platform" => ["Switch", "Mobile"],
             "maker" => "Nintendo",
@@ -144,7 +145,7 @@
 
     <header>
         <article class="nav-container">
-            <article style="display: flex;">
+            <article style="display: flex; align-items: center;">
                 <img src="images/logo.png" style="max-width: 50px; margin-right: 20px;" alt="logo">
                 <a href="index.html" class="logo">Game Stars</a>
             </article>
@@ -161,36 +162,33 @@
     </header>
 
     <main class="container">
-        <h1 class="page-title">Laatste Reviews</h1>
+        <h1 class="page-title" style="text-align: center; margin-top: 20px;">Laatste Reviews</h1>
         <p style="text-align: center;">Bekijk hier de nieuwste toevoegingen aan onze collectie.</p>
 
         <section class="slideshow-container">
             
-            <?php 
-            foreach($latestReviews as $index => $review): 
-            foreach($latestReviews as $index => $review): 
-
+            <?php foreach($latestReviews as $index => $review): 
                 $pegiClass = ($review['pegi'] >= 16) ? 'red' : 'green';
             ?>
 
-                <article class="card review-slide <?php echo ($index === 0) ? 'active' : ''; ?>">
+                <article class="card review-slide <?php echo ($index === 0) ? 'active' : ''; ?>" style="display: <?php echo ($index === 0) ? 'block' : 'none'; ?>">
                     <article class="card-content">
-                        <article style="display: flex; justify-content: space-between; align-items: flex-start;">
-                            <h2><?= $review['titel'] ?></h2>
+                        <article style="display: flex; justify-content: space-between; align-items: center;">
+                            <h2 style="margin: 0;"><?= $review['titel'] ?></h2>
                             <span class="badge-pegi <?= $pegiClass ?>">PEGI <?= $review['pegi'] ?>+</span>
                         </article>
 
-                        <article style="margin-bottom: 15px;">
+                        <article style="margin: 15px 0;">
                             <?php foreach($review['genre'] as $g): ?>
-                                <span style="background: var(--brand-green); color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.8rem; margin-right: 5px;"><?= $g ?></span>
+                                <span style="background: #2ecc71; color: white; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; margin-right: 5px;"><?= $g ?></span>
                             <?php endforeach; ?>
                         </article>
 
                         <p><strong>Maker:</strong> <?= $review['maker'] ?> | <strong>Platforms:</strong> <?= implode(", ", $review['platform']) ?></p>
                         
-                        <p><em>"<?= $review['beschrijving'] ?>"</em></p>
+                        <p style="font-size: 1.1rem; line-height: 1.6;"><em>"<?= $review['beschrijving'] ?>"</em></p>
                         
-                        <h3>Game Rating: <?= $review['rating'] ?>/10</h3>
+                        <h3 style="color: #2c3e50;">Onze Score: <?= $review['rating'] ?>/10</h3>
 
                         <?php if(!empty($review['trailer'])): ?>
                         <article class="video-container">
@@ -198,16 +196,16 @@
                         </article>
                         <?php endif; ?>
 
-                        <article style="margin-top: 25px;">
+                        <article style="margin-top: 30px;">
                             <h4>Wat zeggen spelers?</h4>
                             <article class="user-reviews-grid">
-                                <?php 
-                                foreach($review['user_reviews'] as $userRev): 
-                                ?>
+                                <?php foreach($review['user_reviews'] as $userRev): ?>
                                     <article class="user-review-box">
-                                        <strong style="color: var(--dark-green-text);"><?= $userRev['naam'] ?></strong>
-                                        <span style="float: right; color: orange;">★ <?= $userRev['rating'] ?></span>
-                                        <p style="margin-top: 5px; font-style: italic; margin-bottom: 0;">"<?= $userRev['tekst'] ?>"</p>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <strong style="color: #2c3e50;"><?= $userRev['naam'] ?></strong>
+                                            <span style="color: #f1c40f;">★ <?= $userRev['rating'] ?></span>
+                                        </div>
+                                        <p style="margin-top: 8px; font-style: italic; margin-bottom: 0;">"<?= $userRev['tekst'] ?>"</p>
                                     </article>
                                 <?php endforeach; ?>
                             </article>
@@ -223,7 +221,7 @@
     </main>
 
     <footer>
-        <article class="container">
+        <article class="container" style="text-align: center; padding: 20px 0;">
             <p>&copy; 2025 Game Stars. Alle rechten voorbehouden.</p>
         </article>
     </footer>
@@ -231,32 +229,25 @@
     <script>
         const slides = document.querySelectorAll('.review-slide');
         let currentSlide = 0;
-        const slideIntervalTime = 8000; 
-
-        function nextSlide() {
-          
-            slides[currentSlide].classList.remove('active');
-            slides[currentSlide].style.display = 'none';
-
-         
-         const slideIntervalTime = 8000;
+        const slideIntervalTime = 8000;
 
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
             slides[currentSlide].style.display = 'none';
+
             currentSlide = (currentSlide + 1) % slides.length;
 
             slides[currentSlide].style.display = 'block';
             
             setTimeout(() => {
                 slides[currentSlide].classList.add('active');
-            }, 10);
+            }, 50);
         }
 
-       
-        setInterval(nextSlide, slideIntervalTime);
-
-        console.log("Slideshow gestart met " + slides.length + " reviews.");
+        if(slides.length > 0) {
+            setInterval(nextSlide, slideIntervalTime);
+            console.log("Slideshow actief met " + slides.length + " games.");
+        }
     </script>
 
 </body>

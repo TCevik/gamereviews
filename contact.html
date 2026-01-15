@@ -144,7 +144,6 @@
     </footer>
 
     <script>
-        // Tip: Houd er rekening mee dat deze URL openbaar zichtbaar is in de browser
         const WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1444967219732680794/1CFTOCDKW9ywhuz-hobwtvt9eHGf9eFElhwTTarZjjQJPKgZATPkreDVyaO6bobVqANW';
 
         const contactForm = document.querySelector('.contact-form');
@@ -152,7 +151,6 @@
         contactForm.addEventListener('submit', async function (event) {
             event.preventDefault();
 
-            // Pak de knop op om deze tijdelijk uit te schakelen (voorkomt dubbel klikken)
             const submitBtn = contactForm.querySelector('.btn');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Verzenden...';
@@ -188,7 +186,6 @@
                     alert('Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.');
                     contactForm.reset();
                 } else {
-                    // Nu staat de foutmelding netjes in het else-blok
                     console.error('Fout bij versturen naar Discord:', response.status);
                     alert('Er is een fout opgetreden bij het verzenden. Status: ' + response.status);
                 }
@@ -196,7 +193,6 @@
                 console.error('Netwerkfout:', error);
                 alert('Er is een netwerkfout opgetreden. Controleer je verbinding.');
             } finally {
-                // Zet de knop altijd weer terug
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Verstuur Knop';
             }

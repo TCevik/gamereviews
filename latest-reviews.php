@@ -79,8 +79,8 @@
 <body>
 
     <?php
-    $latestReviews = [
-        [
+    $latestReviews = [ // Variabelen met daarin text dat op de website komt te staan // 
+        [ 
             "titel" => "Cyberzone 2077: Phantom",
             "genre" => ["Actie", "RPG"],
             "pegi" => 18,
@@ -125,7 +125,7 @@
                 ["naam" => "Daan", "tekst" => "Mooi tijdsbeeld neergezet.", "rating" => 4]
             ]
         ],
-        [
+        [ 
             "titel" => "Super Kart Racers",
             "genre" => ["Racing", "Familie"],
             "pegi" => 3,
@@ -167,7 +167,9 @@
 
         <section class="slideshow-container">
             
-            <?php foreach($latestReviews as $index => $review): 
+            <?php // Loop door alle reviews en houd de index bij voor de slideshow functionaliteit
+            foreach($latestReviews as $index => $review): 
+                // Bepaal de kleur van de PEGI badge: rood als 16+, anders groen
                 $pegiClass = ($review['pegi'] >= 16) ? 'red' : 'green';
             ?>
 
@@ -190,7 +192,8 @@
                         
                         <h3 style="color: #2c3e50;">Onze Score: <?= $review['rating'] ?>/10</h3>
 
-                        <?php if(!empty($review['trailer'])): ?>
+                        <?php // Controleer of er een trailer link is voordat we de video container tonen
+                        if(!empty($review['trailer'])): ?>
                         <article class="video-container">
                             <iframe src="<?= $review['trailer'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </article>
@@ -199,9 +202,11 @@
                         <article style="margin-top: 30px;">
                             <h4>Wat zeggen spelers?</h4>
                             <article class="user-reviews-grid">
-                                <?php foreach($review['user_reviews'] as $userRev): ?>
+                                <?php // Loop door alle gebruikersreviews voor deze specifieke game
+                                foreach($review['user_reviews'] as $userRev): ?>
                                     <article class="user-review-box">
                                         <div style="display: flex; justify-content: space-between;">
+                                            <!-- Toon de naam van de reviewer en de gegeven score -->
                                             <strong style="color: #2c3e50;"><?= $userRev['naam'] ?></strong>
                                             <span style="color: #f1c40f;">★ <?= $userRev['rating'] ?></span>
                                         </div>

@@ -63,6 +63,7 @@
 <body id="reviewb">
 
 <?php
+// Hoofdarray met alle data van de games, inclusief genres, rating en trailers
 $games = [
     "The Chronicles of Eldoria: Shadowfall" => [
         "titel" => "The Chronicles of Eldoria: Shadowfall",
@@ -88,12 +89,27 @@ $games = [
     ]
 ];
 
-$gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : (isset($_GET['leeftijd']) ? (int)$_GET['leeftijd'] : 0);
-$leeftijdIngevuld = isset($_POST['leeftijd']) || isset($_GET['leeftijd']);
+// Eerst zetten we de variabelen op 0 of leeg
+$gebruikersLeeftijd = 0;
+$leeftijdIngevuld = false;
 
-$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "The Chronicles of Eldoria: Shadowfall";
+// Check of leeftijd in het formulier zat
+if (isset($_POST['leeftijd'])) {
+    $gebruikersLeeftijd = $_POST['leeftijd'];
+    $leeftijdIngevuld = true;
+} elseif (isset($_GET['leeftijd'])) {
+    // Of misschien in de link (URL)
+    $gebruikersLeeftijd = $_GET['leeftijd'];
+    $leeftijdIngevuld = true;
+}
 
-if (!array_key_exists($huidigeTitel, $games)) {
+$huidigeTitel = "The Chronicles of Eldoria: Shadowfall";
+if (isset($_GET['titel'])) {
+    $huidigeTitel = $_GET['titel'];
+}
+
+// Als de game niet bestaat, pakken we de standaard game
+if (array_key_exists($huidigeTitel, $games) == false) {
     $huidigeTitel = "The Chronicles of Eldoria: Shadowfall";
 }
 
@@ -103,10 +119,11 @@ $reviewIngezonden = false;
 $nieuweRating = $geselecteerdeGameData['rating'];
 $userReviewData = [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
-    $naam = htmlspecialchars($_POST['naam']);
-    $beschrijving = htmlspecialchars($_POST['beschrijving']);
-    $userRating = (float)$_POST['rating'];
+// Als er op de knop gedrukt is
+if (isset($_POST['submit_review'])) {
+    $naam = $_POST['naam'];
+    $beschrijving = $_POST['beschrijving'];
+    $userRating = $_POST['rating'];
     
     $nieuweRating = ($geselecteerdeGameData['rating'] + $userRating) / 2;
     
@@ -117,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
     ];
     $reviewIngezonden = true;
     
-    $gebruikersLeeftijd = (int)$_POST['hidden_leeftijd'];
+    $gebruikersLeeftijd = $_POST['hidden_leeftijd'];
     $leeftijdIngevuld = true;
 }
 ?>
@@ -168,7 +185,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
                 <article class="card" id="review" style="max-width: 800px; margin: 0 auto; padding: 20px;">
                     
                     <article style="margin-bottom: 10px;">
-                        <?php foreach($geselecteerdeGameData['genre'] as $g): ?>
+                        <?php // Loop door alle genres van de game en maak voor elk een label aan
+                        foreach($geselecteerdeGameData['genre'] as $g): ?>
                             <span class="badge" style="background-color: var(--brand-green);"><?= $g ?></span>
                         <?php endforeach; ?>
                     </article>

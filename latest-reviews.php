@@ -79,7 +79,7 @@
 <body>
 
     <?php
-    $latestReviews = [ // Variabelen met daarin text dat op de website komt te staan // 
+    $latestReviews = [ // Hoofdarray met alle recente reviews, inclusief geneste user_reviews
         [ 
             "titel" => "Cyberzone 2077: Phantom",
             "genre" => ["Actie", "RPG"],
@@ -167,13 +167,18 @@
 
         <section class="slideshow-container">
             
-            <?php // Loop door alle reviews en houd de index bij voor de slideshow functionaliteit
-            foreach($latestReviews as $index => $review): 
-                // Bepaal de kleur van de PEGI badge: rood als 16+, anders groen
-                $pegiClass = ($review['pegi'] >= 16) ? 'red' : 'green';
+            <?php 
+            $teller = 0; // Teller om te weten bij welke slide we zijn
+            foreach($latestReviews as $review): 
+                
+                // Kleur bepalen met een if/else
+                $pegiClass = 'green';
+                if ($review['pegi'] >= 16) {
+                    $pegiClass = 'red';
+                }
             ?>
 
-                <article class="card review-slide <?php echo ($index === 0) ? 'active' : ''; ?>" style="display: <?php echo ($index === 0) ? 'block' : 'none'; ?>">
+                <article class="card review-slide <?php if($teller == 0) { echo 'active'; } ?>" style="display: <?php if($teller == 0) { echo 'block'; } else { echo 'none'; } ?>;">
                     <article class="card-content">
                         <article style="display: flex; justify-content: space-between; align-items: center;">
                             <h2 style="margin: 0;"><?= $review['titel'] ?></h2>
@@ -192,7 +197,7 @@
                         
                         <h3 style="color: #2c3e50;">Onze Score: <?= $review['rating'] ?>/10</h3>
 
-                        <?php // Controleer of er een trailer link is voordat we de video container tonen
+                        <?php // Controleer of er een trailer link is voordat we de video tonen
                         if(!empty($review['trailer'])): ?>
                         <article class="video-container">
                             <iframe src="<?= $review['trailer'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -219,8 +224,8 @@
                     </article>
                 </article>
 
-            <?php endforeach; ?>
-
+            <?php $teller++; endforeach; ?>
+©
         </section>
 
     </main>

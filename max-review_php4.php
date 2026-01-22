@@ -63,6 +63,7 @@
 <body id="reviewb">
 
 <?php
+// Uitgebreide array met game data, inclusief trailers en meerdere genres
 $games = [
     "Aetheria: Eternal Harvest" => [
         "titel" => "Aetheria: Eternal Harvest",
@@ -90,12 +91,26 @@ $games = [
     ]
 ];
 
-$gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : (isset($_GET['leeftijd']) ? (int)$_GET['leeftijd'] : 0);
-$leeftijdIngevuld = isset($_POST['leeftijd']) || isset($_GET['leeftijd']);
+// Variabelen klaarzetten
+$gebruikersLeeftijd = 0;
+$leeftijdIngevuld = false;
 
-$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Aetheria: Eternal Harvest";
+// Checken of we de leeftijd hebben gekregen
+if (isset($_POST['leeftijd'])) {
+    $gebruikersLeeftijd = $_POST['leeftijd'];
+    $leeftijdIngevuld = true;
+} elseif (isset($_GET['leeftijd'])) {
+    $gebruikersLeeftijd = $_GET['leeftijd'];
+    $leeftijdIngevuld = true;
+}
 
-if (!array_key_exists($huidigeTitel, $games)) {
+$huidigeTitel = "Aetheria: Eternal Harvest";
+if (isset($_GET['titel'])) {
+    $huidigeTitel = $_GET['titel'];
+}
+
+// Bestaat de game wel?
+if (array_key_exists($huidigeTitel, $games) == false) {
     $huidigeTitel = "Aetheria: Eternal Harvest";
 }
 
@@ -105,10 +120,11 @@ $reviewIngezonden = false;
 $nieuweRating = $geselecteerdeGameData['rating'];
 $userReviewData = [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
-    $naam = htmlspecialchars($_POST['naam']);
-    $beschrijving = htmlspecialchars($_POST['beschrijving']);
-    $userRating = (float)$_POST['rating'];
+// Formulier afhandelen
+if (isset($_POST['submit_review'])) {
+    $naam = $_POST['naam'];
+    $beschrijving = $_POST['beschrijving'];
+    $userRating = $_POST['rating'];
     
     $nieuweRating = ($geselecteerdeGameData['rating'] + $userRating) / 2;
     
@@ -119,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
     ];
     $reviewIngezonden = true;
     
-    $gebruikersLeeftijd = (int)$_POST['hidden_leeftijd'];
+    $gebruikersLeeftijd = $_POST['hidden_leeftijd'];
     $leeftijdIngevuld = true;
 }
 ?>
@@ -170,7 +186,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
                 <article class="card" id="review" style="max-width: 800px; margin: 0 auto; padding: 20px;">
                     
                     <article style="margin-bottom: 10px;">
-                        <?php foreach($geselecteerdeGameData['genre'] as $g): ?>
+                        <?php // Loopje voor de genres
+                        foreach($geselecteerdeGameData['genre'] as $g): ?>
                             <span class="badge" style="background-color: var(--brand-green);"><?= $g ?></span>
                         <?php endforeach; ?>
                     </article>

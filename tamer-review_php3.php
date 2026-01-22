@@ -68,6 +68,7 @@
 <body id="reviewb">
 
 <?php
+// Games array met extra foto's voor de galerij functionaliteit
 $games = [
     "Boardwalk billionaires" => [
         "titel" => "Boardwalk billionaires",
@@ -93,22 +94,25 @@ $games = [
     ]
 ];
 
-$gebruikersLeeftijd = isset($_POST['leeftijd']) ? (int)$_POST['leeftijd'] : 0;
-$leeftijdIngevuld = isset($_POST['leeftijd']);
+// Variabelen voor leeftijd
+$gebruikersLeeftijd = 0;
+$leeftijdIngevuld = false;
 
-$huidigeTitel = isset($_GET['titel']) ? $_GET['titel'] : "Life weaver";
+if (isset($_POST['leeftijd'])) {
+    $gebruikersLeeftijd = $_POST['leeftijd'];
+    $leeftijdIngevuld = true;
+}
 
-$geselecteerdeGameData = null;
+// Huidige titel ophalen uit GET request
+$huidigeTitel = "Life weaver";
+if (isset($_GET['titel'])) {
+    $huidigeTitel = $_GET['titel'];
+}
 
-switch ($huidigeTitel) {
-    case "Boardwalk billionaires":
-        $geselecteerdeGameData = $games["Boardwalk billionaires"];
-        break;
-    case "Life weaver":
-    default:
-        $geselecteerdeGameData = $games["Life weaver"];
-        $huidigeTitel = "Life weaver";
-        break;
+// Kijk welke game we moeten laten zien
+$geselecteerdeGameData = $games["Life weaver"]; // Standaard
+if ($huidigeTitel == "Boardwalk billionaires") {
+    $geselecteerdeGameData = $games["Boardwalk billionaires"];
 }
 ?>
 
@@ -160,7 +164,8 @@ switch ($huidigeTitel) {
                     </article>
 
                     <article class="gallery">
-                        <?php foreach($geselecteerdeGameData['fotos'] as $foto): ?>
+                        <?php // Genereer de afbeeldingen voor de galerij
+                        foreach($geselecteerdeGameData['fotos'] as $foto): ?>
                             <img src="<?= $foto ?>" alt="Game screenshot">
                         <?php endforeach; ?>
                     </article>
@@ -174,11 +179,9 @@ switch ($huidigeTitel) {
                             <h4>Details</h4>
                             <p><strong>PEGI Leeftijd:</strong> <?= "{$geselecteerdeGameData['pegi']}" ?>+</p>
                             <p><strong>Platforms:</strong> 
-                                <?php 
-                                    foreach($geselecteerdeGameData['platform'] as $index => $plat) {
-                                        echo $plat;
-                                        if ($index < count($geselecteerdeGameData['platform']) - 1) echo ", ";
-                                    }
+                                <?php
+                                    // Zet de platforms achter elkaar
+                                    echo implode(", ", $geselecteerdeGameData['platform']);
                                 ?>
                             </p>
                         </article>

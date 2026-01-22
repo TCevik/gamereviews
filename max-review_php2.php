@@ -11,6 +11,7 @@
 <body id="reviewb">
 
     <?php
+    // Catalogus array met de details van twee verschillende games
     $gamesCatalogus = [
         "game1" => [
             "titel" => "Toren verdediging",
@@ -36,20 +37,21 @@
         ]
     ];
 
-    $keuze = isset($_GET['keuze']) ? $_GET['keuze'] : '1';
+    // Kijk of er een keuze is gemaakt in de URL (?keuze=...), standaard is '1'
+    $keuze = '1';
+    if (isset($_GET['keuze'])) {
+        $keuze = $_GET['keuze'];
+    }
     
     $geselecteerdeGame = [];
 
-    switch ($keuze) {
-        case '2':
-            $geselecteerdeGame = $gamesCatalogus["game2"];
-            $knopLink = "?keuze=1";
-            break;
-        case '1':
-        default:
-            $geselecteerdeGame = $gamesCatalogus["game1"];
-            $knopLink = "?keuze=2";
-            break;
+    // Als het nummer 2 is, pakken we de tweede game
+    if ($keuze == '2') {
+        $geselecteerdeGame = $gamesCatalogus["game2"];
+        $knopLink = "?keuze=1";
+    } else {
+        $geselecteerdeGame = $gamesCatalogus["game1"];
+        $knopLink = "?keuze=2";
     }
     ?>
 
@@ -76,6 +78,7 @@
         <article class="card" id="review" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto; padding: 20px;">
             
             <article style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <!-- Toon de cover en een screenshot naast elkaar -->
                 <img src="<?= $geselecteerdeGame['cover'] ?>" alt="Cover" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
                 <img src="<?= $geselecteerdeGame['screenshot'] ?>" alt="Screenshot" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; filter: grayscale(30%);">
             </article>
@@ -86,7 +89,7 @@
                         <?= "{$geselecteerdeGame['genre']}" ?>
                     </span>
                     <span style="font-weight: bold; font-size: 1.2rem;">
-                        €<?= number_format($geselecteerdeGame['prijs'], 2, ',', '.') ?>
+                        €<?= $geselecteerdeGame['prijs'] ?>
                     </span>
                 </article>
 
@@ -94,6 +97,7 @@
                 <p><?= $geselecteerdeGame['beschrijving'] ?></p>
 
                 <article style="background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    <!-- Lijstje met specifieke details zoals platform en PEGI -->
                     <h4>Specificaties</h4>
                     <ul>
                         <strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?>

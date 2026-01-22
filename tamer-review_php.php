@@ -10,6 +10,7 @@
 <body id="reviewb">
 
     <?php
+    // Gegevens voor game 1
     $game1 = [
         "id" => 1,
         "titel" => "Epische Reis I",
@@ -23,6 +24,7 @@
         "minpunten" => "Lange laadtijden"
     ];
 
+    // Gegevens voor game 2
     $game2 = [
         "id" => 2,
         "titel" => "Middeleeuws Beleg",
@@ -36,6 +38,7 @@
         "minpunten" => "Steile leercurve"
     ];
 
+    // Logica om te bepalen welke game getoond wordt
     if (isset($_GET['game']) && $_GET['game'] == '2') {
         $geselecteerdeGame = $game2;
         $andereGameLink = "?game=1";
@@ -66,6 +69,7 @@
         <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: white;" class="page-title">Review: <?= $geselecteerdeGame['titel'] ?></h1>
 
         <article class="card" id="review" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto;">
+            <!-- Grote header afbeelding -->
             <img src="<?= $geselecteerdeGame['afbeelding'] ?>" alt="<?= $geselecteerdeGame['titel'] ?>" style="width: 100%; height: 400px; object-fit: cover;">
             
             <article class="card-content">
@@ -74,7 +78,7 @@
                         <?= $geselecteerdeGame['genre'] ?>
                     </span>
                     <span style="font-weight: bold; font-size: 1.2rem;">
-                        €<?= number_format($geselecteerdeGame['prijs'], 2, ',', '.') ?>
+                        €<?= $geselecteerdeGame['prijs'] ?>
                     </span>
                 </article>
 
@@ -83,6 +87,7 @@
 
                 <article style="background: var(--light-green-bg); padding: 15px; border-radius: 8px; margin-top: 20px;">
                     <h4>Details</h4>
+                    <!-- Opsomming van de details -->
                     <ul>
                         <strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?>
                         <br><strong>PEGI Rating:</strong> <?= $geselecteerdeGame['pegi'] ?>+

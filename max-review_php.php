@@ -22,8 +22,8 @@
         "beschrijving" => "Farm weekis een boeiende boerderijsimulatiegame die beschikbaar is voor zowel PC als consoles. 
         Spelers beginnen met een klein stukje land en de droom om een bloeiende boerderij op te bouwen. De game combineert
          de ontspannende elementen van het verbouwen van gewassen en het fokken van dieren met strategische beslissingen en uitdagingen.",
-        "pluspunten" => "Goede customization, Makkelijk te begrijpen.",
-       "minpunten" => "Je verveelt je snel aan het spel."
+        "pluspunten" => ["Goede customization", "Makkelijk te begrijpen"],
+        "minpunten" => ["Je verveelt je snel aan het spel"]
     ];
 
     // Data definitie voor de tweede game
@@ -38,8 +38,8 @@
         "beschrijving" => "Military Warfare is een intense, snelle strategie- en actiegame die beschikbaar is voor PC en consoles.
          Duik in een wereld vol adrenaline-pompende gevechten waar tactische beslissingen en bliksemsnelle reflexen
           het verschil maken tussen overwinning en nederlaag.",
-        "pluspunten" => "Online multiplayer, Fast pased.",
-        "minpunten" => "De graphics zijn wat minder."
+        "pluspunten" => ["Online multiplayer", "Fast pased"],
+        "minpunten" => ["De graphics zijn wat minder"]
     ];
 
     // Eenvoudige if/else om te wisselen tussen game 1 en 2 op basis van de URL
@@ -95,8 +95,19 @@
                     <ul>
                         <strong>Platform:</strong> <?= $geselecteerdeGame['platform'] ?>
                         <br><strong>PEGI Rating:</strong> <?= $geselecteerdeGame['pegi'] ?>+
-                        <br><strong>Pluspunten:</strong> <?= $geselecteerdeGame['pluspunten'] ?>
-                        <br><strong>Minpunten:</strong> <?= $geselecteerdeGame['minpunten'] ?>
+                        <br><strong>Pluspunten:</strong> 
+                        <?php 
+                        // Loop door de pluspunten heen
+                        foreach($geselecteerdeGame['pluspunten'] as $punt) {
+                            echo $punt . ", ";
+                        }
+                        ?>
+                        <br><strong>Minpunten:</strong> 
+                        <?php 
+                        foreach($geselecteerdeGame['minpunten'] as $punt) {
+                            echo $punt . ", ";
+                        }
+                        ?>
                     </ul>
                 </article>
                 
